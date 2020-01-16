@@ -12,16 +12,18 @@ export class MyChartComponent implements OnInit {
     responsive: true
   };
 
-  public myChartLabels = ['a', 'b', 'c'];
+  public myChartLabels = ['Day'];
 
   public myChartData = [
-    {data: [1, 2, 3], label: 'Series A'},
-    {data: [2, 4, 6], label: 'Series B'}
+    {data: [24], label: 'Temperature'},
+    {data: [1], label: 'Precipitation'},
+    {data: [0], label: 'Snow'},
+    {data: [28.5], label: 'Wind'}
   ];
 
   public myChartLegend = true;
 
-  public myChartType = 'line';
+  public myChartType = 'bar';
 
 
 
@@ -32,4 +34,4 @@ export class MyChartComponent implements OnInit {
   ngOnInit() {
   }
 
-}
+};

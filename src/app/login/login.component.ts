@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService} from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -8,19 +7,8 @@ import { UserService} from '../user.service';
 })
 export class LoginComponent implements OnInit {
 
-  public users = [];
 
-  public showUsers = false;
 
-  myClickHandler() {
-    this.showUsers = !this.showUsers;
-  }
-
-  constructor(private userService: UserService) { }
-
-  ngOnInit() {
-    this.userService.getUsers()
-      .subscribe(data => this.users = data);
-  }
+  ngOnInit() { }
 
 }

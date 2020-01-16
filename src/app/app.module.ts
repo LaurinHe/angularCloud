@@ -18,15 +18,19 @@ import {
   MatNativeDateModule,
   MatSelectModule,
   MatGridListModule,
-  MatTableModule
+  MatTableModule, MatCardModule, MatAutocompleteModule, MatCheckboxModule, MatButtonModule
 } from '@angular/material';
-import { DatepickerComponent } from './datepicker/datepicker.component';
+import { DatepickerComponent } from './selectors/datepicker/datepicker.component';
 import { MatDatepickerModule} from '@angular/material';
 import {StationService} from './station.service';
 import { ListComponent } from './list/list.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { MyChartComponent } from './my-chart/my-chart.component';
 import { LoginComponent } from './login/login.component';
+import { SelectorCountryComponent } from './selectors/selector-country/selector-country.component';
+import { SelectorStationComponent } from './selectors/selector-station/selector-station.component';
+import { SelectorDataComponent } from './selectors/selector-data/selector-data.component';
+import { SendButtonComponent } from './send-button/send-button.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { LoginComponent } from './login/login.component';
     DatepickerComponent,
     ListComponent,
     MyChartComponent,
-    LoginComponent
+    LoginComponent,
+    SelectorCountryComponent,
+    SelectorStationComponent,
+    SelectorDataComponent,
+    SendButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +63,11 @@ import { LoginComponent } from './login/login.component';
     MatGridListModule,
     MatTableModule,
     ReactiveFormsModule,
-    ChartsModule
+    ChartsModule,
+    MatCardModule,
+    MatAutocompleteModule,
+    MatCheckboxModule,
+    MatButtonModule
   ],
   providers: [StationService],
   bootstrap: [AppComponent]
