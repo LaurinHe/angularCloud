@@ -16,8 +16,8 @@ export class MyChartComponent implements OnInit {
 
   public myChartData = [
     {data: [24], label: 'Temperature'},
-    {data: [1], label: 'Precipitation'},
-    {data: [0], label: 'Snow'},
+    {data: [2], label: 'Precipitation'},
+    {data: [0.5], label: 'Snow'},
     {data: [28.5], label: 'Wind'}
   ];
 

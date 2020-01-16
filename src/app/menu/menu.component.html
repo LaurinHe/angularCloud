@@ -1,27 +1,33 @@
-<button mat-icon-button [matMenuTriggerFor]="rootMenu">
-  <mat-icon>more_vert</mat-icon>
-</button>
-
-<mat-menu #rootMenu="matMenu">
-  <button mat-menu-item [matMenuTriggerFor]="infoMenu">
-    <mat-icon>info</mat-icon>
-    <span>Info</span>
+<mat-toolbar color="primary">
+  <button mat-icon-button [matMenuTriggerFor]="rootMenu">
+    <mat-icon>more_vert</mat-icon>
   </button>
 
-  <button mat-menu-item>
-    <mat-icon>lock_open</mat-icon>
-    <span>Log In / Log Out</span>
-  </button>
-</mat-menu>
+  <mat-menu #rootMenu="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="infoMenu">
+      <mat-icon>info</mat-icon>
+      <span>Info</span>
+    </button>
 
-<mat-menu #infoMenu="matMenu">
-  <button mat-menu-item>
-    <mat-icon>cloud_upload</mat-icon>
-    <span>Info about our data</span>
-  </button>
+    <button mat-menu-item>
+      <mat-icon>lock_open</mat-icon>
+      <span>Log In / Log Out</span>
+    </button>
+  </mat-menu>
 
-  <button mat-menu-item>
-    <mat-icon>emoji_people</mat-icon>
-    <span>Info about us</span>
-  </button>
-</mat-menu>
+  <mat-menu #infoMenu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>cloud_upload</mat-icon>
+      <span>Info about our data</span>
+    </button>
+
+    <button mat-menu-item>
+      <mat-icon>emoji_people</mat-icon>
+      <span>Info about us</span>
+    </button>
+  </mat-menu>
+
+  <div class="mat-form-field-flex"></div>
+
+  <app-login></app-login>
+</mat-toolbar>

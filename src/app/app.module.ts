@@ -11,14 +11,14 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
 import { MenuComponent } from './menu/menu.component';
 import {
-  _MatMenuDirectivesModule, MatDividerModule,
-  MatIconModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatSelectModule,
-  MatGridListModule,
-  MatTableModule, MatCardModule, MatAutocompleteModule, MatCheckboxModule, MatButtonModule
+    _MatMenuDirectivesModule, MatDividerModule,
+    MatIconModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatGridListModule,
+    MatTableModule, MatCardModule, MatAutocompleteModule, MatCheckboxModule, MatButtonModule, MatToolbarModule
 } from '@angular/material';
 import { DatepickerComponent } from './selectors/datepicker/datepicker.component';
 import { MatDatepickerModule} from '@angular/material';
@@ -45,30 +45,31 @@ import { SendButtonComponent } from './send-button/send-button.component';
     SelectorDataComponent,
     SendButtonComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    MatInputModule,
-    _MatMenuDirectivesModule,
-    MatIconModule,
-    MatMenuModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatSelectModule,
-    MatListModule,
-    MatDividerModule,
-    MatGridListModule,
-    MatTableModule,
-    ReactiveFormsModule,
-    ChartsModule,
-    MatCardModule,
-    MatAutocompleteModule,
-    MatCheckboxModule,
-    MatButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatSliderModule,
+        MatInputModule,
+        _MatMenuDirectivesModule,
+        MatIconModule,
+        MatMenuModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatSelectModule,
+        MatListModule,
+        MatDividerModule,
+        MatGridListModule,
+        MatTableModule,
+        ReactiveFormsModule,
+        ChartsModule,
+        MatCardModule,
+        MatAutocompleteModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        MatToolbarModule
+    ],
   providers: [StationService],
   bootstrap: [AppComponent]
 })
