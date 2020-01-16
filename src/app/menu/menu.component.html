@@ -1,0 +1,17 @@
+<button mat-icon-button [mat-menu-trigger-for]="menu" aria-label="Example icon-button with a menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>cloud</mat-icon>
+    <span>Weather</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>lock_open</mat-icon>
+    <span>Log In</span>
+  </button>
+</mat-menu>

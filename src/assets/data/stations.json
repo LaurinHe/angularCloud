@@ -1,0 +1,7 @@
+[
+  {"id": 1, "name": "Berlin", "availableData": ["Temperature", "Precipitation", "Snow", "MaxTemp", "MinTemp"]},
+  {"id": 2, "name": "Hamburg", "availableData": ["Temperature", "Snow", "MaxTemp", "MinTemp"]},
+  {"id": 3, "name": "Bremen", "availableData": ["Temperature", "Precipitation", "MaxTemp"]},
+  {"id": 4, "name": "Hanover", "availableData": ["Temperature", "MinTemp"]},
+  {"id": 5, "name": "Kiel", "availableData": ["Temperature", "MaxTemp", "MinTemp"]}
+]

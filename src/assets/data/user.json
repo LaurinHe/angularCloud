@@ -1,0 +1,6 @@
+[
+  {"user":  "Anton", "password":  "12345", "status":  "user"},
+  {"user":  "Bernd", "password":  "test", "status":  "admin"},
+  {"user":  "Charlie", "password":  "Password", "status":  "banned"},
+  {"user":  "David", "password":  "hello", "status":  "user"}
+]
