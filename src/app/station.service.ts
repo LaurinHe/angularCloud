@@ -11,22 +11,22 @@ export class StationService {
 
   private baseUrl = 'http://localhost:8080';
 
-  // private selectedCountry = 'GER';
+  private selectedCountry = 'GER';
 
 
   private countryUrlFAKE = '/assets/data/fakeStations.json';
 
 
-  private stationUrlBase = this.baseUrl.concat('/api/contstat/stations/withcountryname/?');
+  private stationUrlBase = this.baseUrl.concat('/api/contstat/stations/withcountryname/?countryid=');
 
-  // private stationUrl = this.stationUrlBase.concat(this.selectedCountry);
+  private stationUrl = this.stationUrlBase.concat(this.selectedCountry);
 
   private countryUrl = this.baseUrl.concat('/api/countries/list');
 
   constructor(private http: HttpClient) { }
 
   getStations(): Observable<IStation[]> {
-    return this.http.get<IStation[]>(this.baseUrl);
+    return this.http.get<IStation[]>(this.stationUrl);
   }
 
   getCountries(): Observable<ICountry[]> {

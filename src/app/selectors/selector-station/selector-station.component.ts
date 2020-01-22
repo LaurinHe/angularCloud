@@ -13,7 +13,7 @@ export class SelectorStationComponent implements OnInit {
 
   myControl = new FormControl();
 
-  stations;
+  stations = [];
 
   filteredStations: Observable<string[]>;
 
