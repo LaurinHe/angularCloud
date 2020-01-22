@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StationService} from '../../station.service';
 
 @Component({
   selector: 'app-selector-country',
@@ -6,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./selector-country.component.css']
 })
 export class SelectorCountryComponent implements OnInit {
+  selectedCountry = 'none';
+  public countries;
 
-  public countries = ['Germany', 'France', 'USA', 'Denmark', 'Netherlands'];
+  constructor(private stationService: StationService) { }
 
-  constructor() { }
+
 
   ngOnInit() {
+    this.stationService.getCountries()
+      .subscribe( data => this.countries = data);
   }
 
 }

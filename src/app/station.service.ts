@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {IStation} from './Interfaces/IStation';
 import {ICountry} from './Interfaces/ICountry';
 import {Observable} from 'rxjs';
-import {catchError} from 'rxjs/operators';
+import { SelectorCountryComponent} from './selectors/selector-country/selector-country.component';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +12,13 @@ export class StationService {
 
   private baseUrl = 'http://localhost8080';
 
-  private stationUrl = this.baseUrl.concat('/api/station');
+  private selectedCountry = 'GER';
 
-  private countryUrl = this.baseUrl.concat('/api/country/list');
+  private stationUrlBase = this.baseUrl.concat('/api/contstat/stations/withcountryname/?');
+
+  private stationUrl = this.stationUrlBase.concat(this.selectedCountry);
+
+  private countryUrl = this.baseUrl.concat('/api/countries/list/');
 
   constructor(private http: HttpClient) { }
 

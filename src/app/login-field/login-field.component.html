@@ -1,9 +1,13 @@
-<form>
+<mat-card>
   <mat-form-field>
-    <input matInput placeholder="Username" value="username">
+    <input matInput placeholder="Username" [value]="username">
   </mat-form-field>
 
   <mat-form-field>
-    <textarea matInput placeholder="Password" value="password"></textarea>
+    <input matInput placeholder="Password" [value]="password">
   </mat-form-field>
-</form>
+
+  <button mat-raised-button color="accent">Login</button>
+
+  <p>{{username}}</p>
+</mat-card>

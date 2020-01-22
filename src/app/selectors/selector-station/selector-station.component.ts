@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import {StationService} from '../../station.service';
 
 @Component({
   selector: 'app-selector-station',
@@ -12,13 +13,16 @@ export class SelectorStationComponent implements OnInit {
 
   myControl = new FormControl();
 
-  stations: string[] = ['Berlin', 'Paris', 'Munich', 'Bayreuth'];
+  stations;
 
   filteredStations: Observable<string[]>;
 
-  constructor() { }
+  constructor(private stationService: StationService) { }
 
   ngOnInit() {
+    this.stationService.getStations()
+      .subscribe(data => this.stations = data);
+
     this.filteredStations = this.myControl.valueChanges
       .pipe(
         startWith(''),
