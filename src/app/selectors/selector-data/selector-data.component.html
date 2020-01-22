@@ -1,0 +1,6 @@
+<mat-form-field>
+  <mat-label>Select your data</mat-label>
+  <mat-select [formControl]="dataControl" multiple>
+    <mat-option *ngFor="let data of dataList" [value]="data">{{data}}</mat-option>
+  </mat-select>
+</mat-form-field>

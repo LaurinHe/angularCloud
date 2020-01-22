@@ -1,0 +1,10 @@
+<mat-form-field>
+
+  <mat-label>Select a Country</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let country of countries" [value]="country">
+      {{country}}
+    </mat-option>
+  </mat-select>
+
+</mat-form-field>

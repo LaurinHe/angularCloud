@@ -23,7 +23,6 @@ import {
 import { DatepickerComponent } from './selectors/datepicker/datepicker.component';
 import { MatDatepickerModule} from '@angular/material';
 import {StationService} from './station.service';
-import { ListComponent } from './list/list.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { MyChartComponent } from './my-chart/my-chart.component';
 import { LoginComponent } from './login/login.component';
@@ -37,7 +36,6 @@ import { SendButtonComponent } from './send-button/send-button.component';
     AppComponent,
     MenuComponent,
     DatepickerComponent,
-    ListComponent,
     MyChartComponent,
     LoginComponent,
     SelectorCountryComponent,
