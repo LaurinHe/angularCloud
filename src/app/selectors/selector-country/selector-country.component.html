@@ -3,8 +3,8 @@
   <mat-label>Select a Country</mat-label>
   <mat-select [(value)]="selectedCountry">
     <mat-option value="none">None</mat-option>
-    <mat-option *ngFor="let country of countries" [value]="country">
-      {{country}}
+    <mat-option *ngFor="let country of countries" [value]="country.countryname">
+      {{country.countryname}}
     </mat-option>
   </mat-select>
 
