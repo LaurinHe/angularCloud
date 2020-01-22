@@ -30,6 +30,7 @@ import { SelectorCountryComponent } from './selectors/selector-country/selector-
 import { SelectorStationComponent } from './selectors/selector-station/selector-station.component';
 import { SelectorDataComponent } from './selectors/selector-data/selector-data.component';
 import { SendButtonComponent } from './send-button/send-button.component';
+import { LoginFieldComponent } from './login-field/login-field.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SendButtonComponent } from './send-button/send-button.component';
     SelectorCountryComponent,
     SelectorStationComponent,
     SelectorDataComponent,
-    SendButtonComponent
+    SendButtonComponent,
+    LoginFieldComponent
   ],
     imports: [
         BrowserModule,
