@@ -7,8 +7,8 @@ import { StationService} from '../../station.service';
   styleUrls: ['./selector-country.component.css']
 })
 export class SelectorCountryComponent implements OnInit {
-  selectedCountry = 'none';
-  public countries;
+
+  public countries = [];
 
   constructor(private stationService: StationService) { }
 
