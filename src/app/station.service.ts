@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 })
 export class StationService {
 
-  private baseUrl = 'http://localhost8080';
+  private baseUrl = 'http://localhost:8080';
 
   // private selectedCountry = 'GER';
 
@@ -21,7 +21,7 @@ export class StationService {
 
   // private stationUrl = this.stationUrlBase.concat(this.selectedCountry);
 
-  private countryUrl = this.baseUrl.concat('/api/countries/list/');
+  private countryUrl = this.baseUrl.concat('/api/countries/list');
 
   constructor(private http: HttpClient) { }
 
@@ -30,7 +30,7 @@ export class StationService {
   }
 
   getCountries(): Observable<ICountry[]> {
-    return this.http.get<ICountry[]>(this.countryUrlFAKE);
+    return this.http.get<ICountry[]>(this.countryUrl);
   }
 }
 
