@@ -1,11 +1,16 @@
 <mat-form-field>
 
   <mat-label>Select a Country</mat-label>
-  <mat-select>
+  <mat-select [(value)]="selectedCountry">
     <mat-option *ngFor="let country of countries" [value]="country.countryname">
       {{country.countryname}}
     </mat-option>
   </mat-select>
 
-
 </mat-form-field>
+
+<p *ngIf="selectedCountry">You selected: {{selectedCountry.countryid}}</p>
+
+<button (click)="changeSelectedCountry()">Change Country</button>
+
+

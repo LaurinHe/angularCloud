@@ -1,0 +1,5 @@
+[
+  {"id": "001", "name": "Berlin", "latitude": 123, "longitude": 245, "elevation": 452, "state": "EU", "gsnflag": "...", "hcncrnflag": "...", "wmoid": "..."},
+  {"id": "002", "name": "Munich", "latitude": 555, "longitude": 759, "elevation": 235, "state": "EU", "gsnflag": "...", "hcncrnflag": "...", "wmoid": "..."},
+  {"id": "003", "name": "Bayreuth", "latitude": 666, "longitude": 845, "elevation": 845, "state": "EU", "gsnflag": "...", "hcncrnflag": "...", "wmoid": "..."}
+]

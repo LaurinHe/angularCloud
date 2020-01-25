@@ -31,6 +31,7 @@ import { SelectorStationComponent } from './selectors/selector-station/selector-
 import { SelectorDataComponent } from './selectors/selector-data/selector-data.component';
 import { SendButtonComponent } from './send-button/send-button.component';
 import { LoginFieldComponent } from './login-field/login-field.component';
+import { MatRadioModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { LoginFieldComponent } from './login-field/login-field.component';
         MatAutocompleteModule,
         MatCheckboxModule,
         MatButtonModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatRadioModule
     ],
   providers: [StationService],
   bootstrap: [AppComponent]
