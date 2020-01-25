@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {StationService} from '../station.service';
+import {IDataAll} from '../Interfaces/IDataAll';
 
 @Component({
   selector: 'app-my-chart',
@@ -12,26 +14,40 @@ export class MyChartComponent implements OnInit {
     responsive: true
   };
 
-  public myChartLabels = ['Day'];
+  public myChartLabels = ['1', '2', '3', '4'];
+
+  public givenData: IDataAll[];
+
+  private myTempSet: number[] = [];
+  private myPrecSet: number[] = [];
 
   public myChartData = [
-    {data: [24], label: 'Temperature'},
-    {data: [2], label: 'Precipitation'},
-    {data: [0.5], label: 'Snow'},
-    {data: [28.5], label: 'Wind'}
+    {data: this.myTempSet, label: 'Temp'},
+    {data: this.myPrecSet, label: 'Prec'}
   ];
 
   public myChartLegend = true;
 
   public myChartType = 'bar';
 
-
-
-
-
-  constructor() { }
-
-  ngOnInit() {
+  buttonHandler() {
+    while (this.myTempSet.length > 0) {
+      this.myTempSet.pop();
+    }
+    while (this.myPrecSet.length > 0) {
+      this.myPrecSet.pop();
+    }
+    for (let i = 0; i < this.givenData.length; i++) {
+      this.myTempSet.push(this.givenData[i].temperature);
+      this.myPrecSet.push(this.givenData[i].precipitation); }
   }
 
-};
+
+
+  constructor(private stationService: StationService) { }
+
+  ngOnInit() {
+    this.stationService.getFakeData('FakeData.json').subscribe(data => this.givenData = data);
+  }
+
+}

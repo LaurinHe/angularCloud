@@ -1,0 +1,26 @@
+[
+  { "temperature": 10,
+    "seaLevelPressure": 9,
+    "stationPressure": 8,
+    "windSpeed": 5,
+    "maxTemperature": 4,
+    "minTemperature": 2,
+    "precipitation": 5
+    },
+  { "temperature": 24,
+    "seaLevelPressure": 4,
+    "stationPressure": 8,
+    "windSpeed": 8,
+    "maxTemperature": 4,
+    "minTemperature": 2,
+    "precipitation": 2
+  },
+  { "temperature": 1,
+    "seaLevelPressure": 7,
+    "stationPressure": 3,
+    "windSpeed": 2,
+    "maxTemperature": 20,
+    "minTemperature": 11,
+    "precipitation": 2
+  }
+]

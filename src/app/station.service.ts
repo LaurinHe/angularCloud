@@ -70,6 +70,10 @@ export class StationService {
   getData(givenURL: string): Observable<IDataAll[]> {
     return this.http.get<IDataAll[]>('http://localhost:8080/api/data/list' + givenURL);
   }
+
+  getFakeData(givenURL: string): Observable<IDataAll[]> {
+    return this.http.get<IDataAll[]>('assets/data/' + givenURL);
+  }
 }
 
 
