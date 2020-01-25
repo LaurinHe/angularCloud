@@ -23,8 +23,8 @@ export class SelectorCountryComponent implements OnInit {
     this.stationService.currentSelCountry.subscribe(data => this.selectedCountry = data);
   }
 
-  changeSelectedCountry() {
-    this.stationService.changeCountry({countryid: 'USA', countryname: 'UnitedStatesOfAmerica'});
+  changeSelectedCountry(givenCountry: ICountry) {
+    this.stationService.changeCountry(givenCountry);
   }
 
 }

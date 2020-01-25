@@ -11,14 +11,14 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
 import { MenuComponent } from './menu/menu.component';
 import {
-    _MatMenuDirectivesModule, MatDividerModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatSelectModule,
-    MatGridListModule,
-    MatTableModule, MatCardModule, MatAutocompleteModule, MatCheckboxModule, MatButtonModule, MatToolbarModule
+  _MatMenuDirectivesModule, MatDividerModule,
+  MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatSelectModule,
+  MatGridListModule,
+  MatTableModule, MatCardModule, MatAutocompleteModule, MatCheckboxModule, MatButtonModule, MatToolbarModule, MAT_DATE_LOCALE
 } from '@angular/material';
 import { DatepickerComponent } from './selectors/datepicker/datepicker.component';
 import { MatDatepickerModule} from '@angular/material';
@@ -72,7 +72,7 @@ import { MatRadioModule} from '@angular/material';
         MatToolbarModule,
         MatRadioModule
     ],
-  providers: [StationService],
+  providers: [StationService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

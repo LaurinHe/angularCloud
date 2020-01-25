@@ -1,15 +1,10 @@
-<mat-form-field>
-  <input type="text" placeholder="Select a weather-station" aria-label="Assignee" matInput [formControl]="myControl" [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredStations | async" [value]="option">
-        {{option}}
-      </mat-option>
-   </mat-autocomplete>
-</mat-form-field>
-<button (click)="actStations()">Give stations</button>
-<tr *ngFor="let station of stations">
-  <td>{{station.id}}</td>
-  <td>{{station.name}}</td>
-</tr>
+<button (click)="giveStations()" *ngIf="selectedCountry.countryname!=''">Give stations</button>
 
-<p>{{selectedCountry.countryid}}</p>
+<mat-radio-group>
+  <mat-radio-button *ngFor="let station of stations" [value]="station" (click)="changeSelectedStation(station)">
+    {{station.name}}
+  </mat-radio-button>
+</mat-radio-group>
+
+<p *ngIf="selectedStation">{{selectedStation.name}}</p>
+

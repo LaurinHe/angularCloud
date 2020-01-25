@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
 import {StationService} from '../../station.service';
 import {ICountry} from '../../Interfaces/ICountry';
+import {IStation} from '../../Interfaces/IStation';
 
 @Component({
   selector: 'app-selector-station',
@@ -12,36 +10,25 @@ import {ICountry} from '../../Interfaces/ICountry';
 })
 export class SelectorStationComponent implements OnInit {
 
-  myControl = new FormControl();
-
   stations = [];
 
-  filteredStations: Observable<string[]>;
+  selectedCountry: ICountry;
 
-  selectedCountry: ICountry = {countryid: 'GER', countryname: 'Germany'};
+  selectedStation: IStation;
 
   constructor(private stationService: StationService) { }
 
   ngOnInit() {
-
     this.stationService.currentSelCountry.subscribe(data => this.selectedCountry = data);
-
-    this.filteredStations = this.myControl.valueChanges
-      .pipe(
-        startWith(''),
-        map(value => this._filter(value))
-      );
   }
 
-  actStations() {
+  giveStations() {
     this.stationService.getStations(this.selectedCountry.countryid + '.json')
       .subscribe(data => this.stations = data);
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.stations.filter(option => option.toLowerCase().includes(filterValue));
+  changeSelectedStation(givenStation: IStation) {
+    this.stationService.changeStation(givenStation);
   }
 
 }
