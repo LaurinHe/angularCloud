@@ -7,7 +7,10 @@
           [chartType]="myChartType"></canvas>
 </mat-card>
 
-<button (click)="buttonHandler()">Show the graph</button>
+<button mat-raised-button color="primary" (click)="getDataFromServer()">Get the Data</button>
+<button (click)="buttonHandler()">Show the Graph</button>
 
-
+<p>selectedStation = {{this.selectedStation.name}}</p>
+<p>selectedMinDate = {{this.selectedMinDate}}</p>
+<p>selectedMaxDate = {{this.selectedMaxDate}}</p>
 

@@ -23,7 +23,7 @@ export class SelectorStationComponent implements OnInit {
   }
 
   giveStations() {
-    this.stationService.getStations(this.selectedCountry.countryid + '.json')
+    this.stationService.getStations(this.selectedCountry.countryid)
       .subscribe(data => this.stations = data);
   }
 
