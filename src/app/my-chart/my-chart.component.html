@@ -10,8 +10,7 @@
 <button mat-raised-button color="primary" (click)="getDataFromServer()">Get the data</button>
 <button (click)="buttonHandler()">Show the graph</button>
 
-<p>{{givenData[0].maxTemperature}}</p>
-<p>{{givenData[1].dewAttr}}</p>
+<p *ngFor="let temp of myTempSet">{{temp}}</p>
 
 
 

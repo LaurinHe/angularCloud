@@ -67,7 +67,7 @@ export class MyChartComponent implements OnInit {
   constructor(private stationService: StationService) { }
 
   ngOnInit() {
-    this.stationService.getFakeData('FakeData.json').subscribe(data => this.givenData = data);
+    //this.stationService.getFakeData('FakeData.json').subscribe(data => this.givenData = data);
 
     this.stationService.currentSelStation.subscribe(data => this.selectedStation = data);
     this.stationService.currentSelMinDate.subscribe(data => this.selectedMinDate = data);
