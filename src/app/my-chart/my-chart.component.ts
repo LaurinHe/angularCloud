@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {StationService} from '../station.service';
 import {IDataAll} from '../Interfaces/IDataAll';
+import {IStation} from '../Interfaces/IStation';
 
 @Component({
   selector: 'app-my-chart',
@@ -8,6 +9,10 @@ import {IDataAll} from '../Interfaces/IDataAll';
   styleUrls: ['./my-chart.component.css']
 })
 export class MyChartComponent implements OnInit {
+
+  selectedStation: IStation;
+  selectedMinDate: string;
+  selectedMaxDate: string;
 
   public myChartOptions = {
     scaleShowVerticalLines: false,
@@ -30,6 +35,21 @@ export class MyChartComponent implements OnInit {
 
   public myChartType = 'bar';
 
+  getDataFromServer() {
+    this.stationService.getData('?stationidpassed=' +
+      this.selectedStation.id +
+      '&frompoint=' +
+      this.selectedMinDate +
+      '&topoint=' +
+      this.selectedMaxDate).subscribe(data => this.givenData = data);
+    console.log('?stationidpassed=' +
+      this.selectedStation.id +
+      '&frompoint=' +
+      this.selectedMinDate +
+      '&topoint=' +
+      this.selectedMaxDate);
+  }
+
   buttonHandler() {
     while (this.myTempSet.length > 0) {
       this.myTempSet.pop();
@@ -48,6 +68,10 @@ export class MyChartComponent implements OnInit {
 
   ngOnInit() {
     this.stationService.getFakeData('FakeData.json').subscribe(data => this.givenData = data);
+
+    this.stationService.currentSelStation.subscribe(data => this.selectedStation = data);
+    this.stationService.currentSelMinDate.subscribe(data => this.selectedMinDate = data);
+    this.stationService.currentSelMaxDate.subscribe(data => this.selectedMaxDate = data);
   }
 
 }

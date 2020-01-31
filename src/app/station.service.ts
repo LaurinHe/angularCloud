@@ -60,7 +60,7 @@ export class StationService {
   constructor(private http: HttpClient) { }
 
   getStations(givenURL: string): Observable<IStation[]> {
-    return this.http.get<IStation[]>(this.baseUrl + '/api/contstat/stations/withcountryname/?countryid=' + givenURL);
+    return this.http.get<IStation[]>(this.baseUrl + '/api/contstat/stations/withcountryname?countryid=' + givenURL);
   }
 
   getCountries(): Observable<ICountry[]> {
@@ -68,7 +68,7 @@ export class StationService {
   }
 
   getData(givenURL: string): Observable<IDataAll[]> {
-    return this.http.get<IDataAll[]>('http://localhost:8080/api/data/list' + givenURL);
+    return this.http.get<IDataAll[]>(this.baseUrl + '/api/data/list' + givenURL);
   }
 
   getFakeData(givenURL: string): Observable<IDataAll[]> {
