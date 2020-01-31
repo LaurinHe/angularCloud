@@ -19,7 +19,7 @@ export class MyChartComponent implements OnInit {
     responsive: true
   };
 
-  public myChartLabels = ['1', '2', '3', '4'];
+  public myChartLabels = [];
 
   public givenData: IDataAll[];
 
@@ -51,13 +51,19 @@ export class MyChartComponent implements OnInit {
   }
 
   buttonHandler() {
+
     while (this.myTempSet.length > 0) {
       this.myTempSet.pop();
     }
     while (this.myPrecSet.length > 0) {
       this.myPrecSet.pop();
     }
+    while (this.myChartLabels.length > 0) {
+      this.myChartLabels.pop();
+    }
     for (let i = 0; i < this.givenData.length; i++) {
+      this.myChartLabels.push(this.givenData[i].date);
+
       this.myTempSet.push(this.givenData[i].temperature);
       this.myPrecSet.push(this.givenData[i].precipitation); }
   }
@@ -67,7 +73,7 @@ export class MyChartComponent implements OnInit {
   constructor(private stationService: StationService) { }
 
   ngOnInit() {
-    //this.stationService.getFakeData('FakeData.json').subscribe(data => this.givenData = data);
+    // this.stationService.getFakeData('FakeData.json').subscribe(data => this.givenData = data);
 
     this.stationService.currentSelStation.subscribe(data => this.selectedStation = data);
     this.stationService.currentSelMinDate.subscribe(data => this.selectedMinDate = data);
