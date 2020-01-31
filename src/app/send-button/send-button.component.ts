@@ -22,6 +22,12 @@ export class SendButtonComponent implements OnInit {
     this.selectedMinDate +
     '&topoint=' +
     this.selectedMaxDate);
+    console.log('?stationidpassed=' +
+      this.selectedStation.id +
+      '&frompoint=' +
+      this.selectedMinDate +
+      '&topoint=' +
+      this.selectedMaxDate);
   }
 
   ngOnInit() {

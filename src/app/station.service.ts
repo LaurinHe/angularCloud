@@ -60,11 +60,11 @@ export class StationService {
   constructor(private http: HttpClient) { }
 
   getStations(givenURL: string): Observable<IStation[]> {
-    return this.http.get<IStation[]>('assets/data/' + givenURL);
+    return this.http.get<IStation[]>(this.baseUrl + '/api/contstat/stations/withcountryname/?countryid=' + givenURL);
   }
 
   getCountries(): Observable<ICountry[]> {
-    return this.http.get<ICountry[]>(this.countryUrlFAKE);
+    return this.http.get<ICountry[]>(this.countryUrl);
   }
 
   getData(givenURL: string): Observable<IDataAll[]> {
