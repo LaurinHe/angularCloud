@@ -1,5 +1,7 @@
-<mat-card>
-  <canvas baseChart width="200" height="100"
+<button mat-raised-button color="primary" (click)="getDataFromServer()">Get the data</button>
+<button mat-raised-button color="accent" (click)="buttonHandler()">Show the graph</button><mat-card>
+
+  <canvas baseChart width="200" height="60"
           [datasets]="myChartData"
           [labels]="myChartLabels"
           [options]="myChartOptions"
@@ -7,10 +9,7 @@
           [chartType]="myChartType"></canvas>
 </mat-card>
 
-<button mat-raised-button color="primary" (click)="getDataFromServer()">Get the data</button>
-<button (click)="buttonHandler()">Show the graph</button>
 
-<p *ngFor="let temp of myTempSet">{{temp}}</p>
 
 
 

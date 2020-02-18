@@ -2,3 +2,8 @@
   font-size: 10px;
   position: center;
 }
+
+mat-form-field {
+  padding: 10px;
+}
+

@@ -32,6 +32,7 @@ import { SelectorDataComponent } from './selectors/selector-data/selector-data.c
 import { SendButtonComponent } from './send-button/send-button.component';
 import { LoginFieldComponent } from './login-field/login-field.component';
 import { MatRadioModule} from '@angular/material';
+import { RegisterFieldComponent } from './register-field/register-field.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { MatRadioModule} from '@angular/material';
     SelectorStationComponent,
     SelectorDataComponent,
     SendButtonComponent,
-    LoginFieldComponent
+    LoginFieldComponent,
+    RegisterFieldComponent
   ],
     imports: [
         BrowserModule,
