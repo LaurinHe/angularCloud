@@ -1,3 +1,7 @@
 mat-form-field, button {
   margin-right: 12px;
 }
+
+mat-label {
+  font-size: smaller;
+}

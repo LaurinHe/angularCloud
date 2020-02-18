@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {StationService} from '../station.service';
 import {IDataAll} from '../Interfaces/IDataAll';
 import {IStation} from '../Interfaces/IStation';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-my-chart',
@@ -9,6 +10,10 @@ import {IStation} from '../Interfaces/IStation';
   styleUrls: ['./my-chart.component.css']
 })
 export class MyChartComponent implements OnInit {
+
+  selectedData = new FormControl();
+  // tslint:disable-next-line:max-line-length
+  dataSetList: string[] = ['Temperature', 'Precipitation', 'Wind speed', 'Sea level pressure', 'Min Temperature', 'Max Temperature', 'Station pressure']
 
   selectedStation: IStation;
   selectedMinDate: string;
