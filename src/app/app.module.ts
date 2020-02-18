@@ -23,15 +23,21 @@ import {
 import { DatepickerComponent } from './selectors/datepicker/datepicker.component';
 import { MatDatepickerModule} from '@angular/material';
 import {StationService} from './station.service';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MyChartComponent } from './my-chart/my-chart.component';
-import { LoginComponent } from './login/login.component';
+
 import { SelectorCountryComponent } from './selectors/selector-country/selector-country.component';
 import { SelectorStationComponent } from './selectors/selector-station/selector-station.component';
 import { SelectorDataComponent } from './selectors/selector-data/selector-data.component';
 import { SendButtonComponent } from './send-button/send-button.component';
 import { LoginFieldComponent } from './login-field/login-field.component';
 import { MatRadioModule} from '@angular/material';
+
+import { httpInterceptorProviders } from './auth/auth-interceptor';
+import {RegisterComponent} from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { VisualizationComponent } from './visualization/visualization.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +50,10 @@ import { MatRadioModule} from '@angular/material';
     SelectorStationComponent,
     SelectorDataComponent,
     SendButtonComponent,
-    LoginFieldComponent
+    LoginFieldComponent,
+    LoginComponent,
+    RegisterComponent,
+    VisualizationComponent
   ],
     imports: [
         BrowserModule,
@@ -70,9 +79,10 @@ import { MatRadioModule} from '@angular/material';
         MatCheckboxModule,
         MatButtonModule,
         MatToolbarModule,
-        MatRadioModule
+        MatRadioModule,
+        FormsModule
     ],
-  providers: [StationService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
+  providers: [httpInterceptorProviders, StationService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
