@@ -37,6 +37,7 @@ import { RegisterFieldComponent} from './register-field/register-field.component
 import { httpInterceptorProviders } from './auth/auth-interceptor';
 import {RegisterComponent} from './register/register.component';
 import { VisualizationComponent } from './visualization/visualization.component';
+import { InfoComponent } from './info/info.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { VisualizationComponent } from './visualization/visualization.component'
     LoginComponent,
     RegisterComponent,
     VisualizationComponent,
-    RegisterFieldComponent
+    RegisterFieldComponent,
+    InfoComponent
   ],
     imports: [
         BrowserModule,

@@ -9,7 +9,7 @@
       <span>Info</span>
     </button>
 
-    <button mat-menu-item>
+    <button mat-menu-item routerLink="auth/login">
       <mat-icon>lock_open</mat-icon>
       <span>Log In</span>
     </button>
@@ -21,7 +21,7 @@
   </mat-menu>
 
   <mat-menu #infoMenu="matMenu">
-    <button mat-menu-item>
+    <button mat-menu-item  routerLink="info">
       <mat-icon>cloud_upload</mat-icon>
       <span>Info about our data</span>
     </button>

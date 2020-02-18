@@ -1,5 +1,7 @@
-<div *ngIf="isSignedUp; else signupForm">
-  Your registration is successful. Please login!
+<mat-card><div *ngIf="isSignedUp; else signupForm">
+  <mat-icon color="accent">done</mat-icon>
+  <p>Your registration is successful. Please login!</p>
+  <button mat-raised-button color="primary" routerLink="auth/login"></button>
 </div>
 
 <ng-template #signupForm>
@@ -38,11 +40,13 @@
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-primary">Register</button>
-        <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
-          Signup failed!<br/>{{errorMessage}}
-        </div>
+        <button mat-raised-button color="accent">Register</button>
+        <mat-card-content *ngIf="f.submitted && isSignUpFailed">
+          <mat-icon color="warn">warning</mat-icon>
+          <span><strong>Signup failed: {{errorMessage}}</strong></span>
+        </mat-card-content>
       </div>
     </form>
   </div>
 </ng-template>
+</mat-card>
