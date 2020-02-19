@@ -1,4 +1,6 @@
-<button mat-raised-button color="primary" (click)="getDataFromServer()">Get the data</button>
+<button mat-raised-button color="primary" (click)="getDataFromServer()" matTooltip="Fetches your data from the server">
+  Get the data
+</button>
 
 <mat-form-field>
   <mat-label>Which data do you want to see?</mat-label>
@@ -7,9 +9,11 @@
   </mat-select>
 </mat-form-field>
 
-<button mat-raised-button color="accent" (click)="buttonHandler()">Show the graph</button><mat-card>
+<button mat-raised-button color="accent" (click)="buttonHandler()" matTooltip="Click to show or update the graph">
+  Show the graph
+</button><mat-card>
 
-  <canvas baseChart width="200" height="60"
+  <canvas baseChart width="200" height="70"
           [datasets]="myChartData"
           [labels]="myChartLabels"
           [options]="myChartOptions"
