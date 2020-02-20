@@ -26,7 +26,8 @@ import {
     MatButtonModule,
     MatToolbarModule,
     MAT_DATE_LOCALE,
-    MatTooltipModule
+    MatTooltipModule,
+  MatSnackBarModule,
 } from '@angular/material';
 import { DatepickerComponent } from './selectors/datepicker/datepicker.component';
 import { MatDatepickerModule} from '@angular/material';
@@ -92,7 +93,8 @@ import { InfoComponent } from './info/info.component';
         MatToolbarModule,
         MatRadioModule,
         FormsModule,
-        MatTooltipModule
+        MatTooltipModule,
+      MatSnackBarModule
     ],
   providers: [httpInterceptorProviders, StationService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent]

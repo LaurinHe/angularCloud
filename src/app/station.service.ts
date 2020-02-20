@@ -63,7 +63,7 @@ export class StationService {
     return this.http.get<IStation[]>(this.baseUrl + '/api/contstat/stations/withcountryname?countryid=' + givenURL);
   }
 
-  getCountries(): Observable<ICountry[]> {
+   getCountries(): Observable<ICountry[]> {
     return this.http.get<ICountry[]>(this.countryUrl);
   }
 

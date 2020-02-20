@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-info',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private snackbar: MatSnackBar) { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.snackbar.open('hi', 'hey', {duration: 3000})
+      this.router.navigate(['/home']);
+
+      }, 1000);
   }
 
 }

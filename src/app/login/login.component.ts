@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { TokenStorageService } from '../auth/token-storage.service';
 import { AuthLoginInfo } from '../auth/login-info';
+import {Router} from '@angular/router';
+import {MatSnackBar} from '@angular/material'; /*************************/
 
 @Component({
   selector: 'app-login',
@@ -19,12 +21,14 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router, private snackbar: MatSnackBar) { } /***************************/
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getAuthorities();
+      this.snackbar.open('Your login was successful', 'Login', {duration: 3000});
+      this.router.navigate(['/home']); /******************************/
     }
   }
 

@@ -30,10 +30,16 @@ export class MyChartComponent implements OnInit {
 
   private myTempSet: number[] = [];
   private myPrecSet: number[] = [];
+  private myWindSet: number[] = [];
+  private mySeaLevPres: number[] = [];
+  private myMinTemp: number[] = [];
+  private myMaxTemp: number[] = [];
+  private myStatPres: number[] = [];
 
   public myChartData = [
     {data: this.myTempSet, label: 'Temp'},
-    {data: this.myPrecSet, label: 'Prec'}
+    {data: this.myPrecSet, label: 'Prec'},
+    {data: this.myWindSet, label: 'WindSpeed'},
   ];
 
   public myChartLegend = true;
@@ -71,6 +77,9 @@ export class MyChartComponent implements OnInit {
 
       this.myTempSet.push(this.givenData[i].temperature);
       this.myPrecSet.push(this.givenData[i].precipitation); }
+
+    /** Which data do you want to see? **/
+
   }
 
 
