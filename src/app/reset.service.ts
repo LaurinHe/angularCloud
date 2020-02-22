@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { IUser} from './Interfaces/UserI';
 
 import { ResetPwInfo } from './auth/resetpw-info';
+import {AppSettings} from './AppSettings';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,13 +14,13 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ResetService {
-
-  private baseUrlUM = 'http://localhost:8080/usermanagement';
+  private baseUrl = AppSettings.API_ENDPOINT;
+  private baseUrlUM = this.baseUrl + 'usermanagement';
 
   constructor(private http: HttpClient) {  }
 
   deleteUser(): Observable<any> {
-    return this.http.delete(this.baseUrlUM + '/deleteuser', httpOptions);
+    return this.http.delete(this.baseUrlUM + 'deleteuser', httpOptions);
   }
 
   getUserList(): Observable<IUser[]> {
@@ -27,11 +28,11 @@ export class ResetService {
   }
 
   setCurator(): Observable<any> {
-    return this.http.get(this.baseUrlUM + '/setcurator'); //get to set
+    return this.http.get(this.baseUrlUM + 'setcurator'); // get to set
   }
 
   resetpassword(): Observable<any> {
-    return this.http.get(this.baseUrlUM + '/resetpassword'); //get to set
+    return this.http.get(this.baseUrlUM + 'resetpassword'); // get to set
   }
 
 
