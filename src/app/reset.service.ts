@@ -19,8 +19,8 @@ export class ResetService {
 
   constructor(private http: HttpClient) {  }
 
-  deleteUser(id: string): Observable<any> {
-    return this.http.delete(this.baseUrlUM + '/deleteuser' + id, httpOptions);
+  deleteUser(username: string): Observable<any> {
+    return this.http.delete(this.baseUrlUM + '/deleteuser?username=' + username, httpOptions);
   }
 
   getUserList(): Observable<IUser[]> {

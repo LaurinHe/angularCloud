@@ -9,7 +9,7 @@ import { IUser } from '../Interfaces/UserI';
 })
 export class UserManagComponent implements OnInit {
 
-  public userList = [];
+  public userList: IUser[] = [];
 
   public selUser: IUser;
 
@@ -20,8 +20,8 @@ export class UserManagComponent implements OnInit {
       .subscribe(data => this.userList = data);
   }
 
-  deleteButtonHandler(id: string) {
-    this.userService.deleteUser(id)
+  deleteButtonHandler(username: string) {
+    this.userService.deleteUser(username)
       .subscribe();
 
   }
