@@ -18,8 +18,8 @@ export class ResetService {
 
   constructor(private http: HttpClient) {  }
 
-  deleteUser(): Observable<any> {
-    return this.http.delete(this.baseUrlUM + '/deleteuser', httpOptions);
+  deleteUser(id: string): Observable<any> {
+    return this.http.delete(this.baseUrlUM + '/deleteuser' + id, httpOptions);
   }
 
   getUserList(): Observable<IUser[]> {
