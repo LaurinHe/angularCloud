@@ -11,12 +11,6 @@ export class InfoComponent implements OnInit {
 
   constructor(private router: Router, private snackbar: MatSnackBar) { }
 
-  ngOnInit() {
-    setTimeout(() => {
-      this.snackbar.open('hi', 'hey', {duration: 3000})
-      this.router.navigate(['/home']);
-
-      }, 1000);
-  }
+  ngOnInit() {  }
 
 }

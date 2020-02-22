@@ -11,12 +11,19 @@ export class UserManagComponent implements OnInit {
 
   public userList = [];
 
+  public selUser: IUser;
 
   constructor(private userService: ResetService) { }
 
   ngOnInit() {
     this.userService.getUserList()
       .subscribe(data => this.userList = data);
+  }
+
+  deleteButtonHandler(id: string) {
+    this.userService.deleteUser(id)
+      .subscribe();
+
   }
 
 }
