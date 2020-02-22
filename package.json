@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@azure/ng-deploy": "^0.2.3",
     "bootstrap": "^4.4.1",
     "chart": "^0.1.2",
     "chart.js": "^2.9.3",

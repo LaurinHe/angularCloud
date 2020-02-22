@@ -23,7 +23,7 @@ export class MyChartComponent implements OnInit {
 
   public givenData: IDataAll[];
 
-  private myTempSet: number[] = [];
+  public myTempSet: number[] = [];
   private myPrecSet: number[] = [];
 
   public myChartData = [
