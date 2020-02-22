@@ -2,19 +2,13 @@
   Get the data
 </button>
 
-<mat-form-field>
-  <mat-label>Which data do you want to see?</mat-label>
-  <mat-select [formControl]="selectedData" multiple>
-    <mat-option *ngFor="let dataSet of dataSetList" [value]="dataSet">{{dataSet}}</mat-option>
-  </mat-select>
-</mat-form-field>
 
 <button mat-raised-button color="accent" (click)="buttonHandler()" matTooltip="Click to show or update the graph">
   Show the graph
 </button><mat-card>
 
   <canvas baseChart width="200" height="70"
-          [datasets]="myChartData"
+          [datasets]="myChartDataSets"
           [labels]="myChartLabels"
           [options]="myChartOptions"
           [legend]="myChartLegend"

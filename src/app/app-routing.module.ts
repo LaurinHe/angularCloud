@@ -6,6 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { InfoComponent } from './info/info.component';
 
 import { VisualizationComponent } from './visualization/visualization.component';
+import {FormularComponent} from './formular/formular.component';
+import { UserManagComponent } from './user-manag/user-manag.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,14 @@ const routes: Routes = [
   {
     path: 'signup',
     component: RegisterComponent
+  },
+  {
+    path: 'reset-password',
+    component: FormularComponent
+  },
+  {
+    path: 'user-management',
+    component: UserManagComponent
   },
   {
     path: '',
