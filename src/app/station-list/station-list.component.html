@@ -1,0 +1,39 @@
+<p>station-list works!</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Station List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Elevation</th>
+        <th>State</th>
+        <th>GSN-Flag</th>
+        <th>HCN-CRN-Flag</th>
+        <th>WMO-Id</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let station of stations | async">
+        <td>{{station.id}}</td>
+        <td>{{station.name}}</td>
+        <td>{{station.latitude}}</td>
+        <td>{{station.longitude}}</td>
+        <td>{{station.elevation}}</td>
+        <td>{{station.state}}</td>
+        <td>{{station.gsnflag}}</td>
+        <td>{{station.wmoid}}</td>
+
+        <!--<td>
+          <button (click)="stationDetails(station.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        </td>-->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

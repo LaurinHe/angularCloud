@@ -75,6 +75,15 @@ export class StationService {
   getFakeData(givenURL: string): Observable<IDataAll[]> {
     return this.http.get<IDataAll[]>('assets/data/' + givenURL);
   }
+
+  getStation(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
+
+  createStation(station: IStation) { // : Observable<IStation> {
+    // return this.http.post(`${this.baseUrl + 'api/contstat/stations'}`, station);
+  }
+
 }
 
 

@@ -50,6 +50,9 @@ import { InfoComponent } from './info/info.component';
 import { FormularComponent } from './formular/formular.component';
 import { UserManagComponent } from './user-manag/user-manag.component';
 
+import {StationListComponent} from './station-list/station-list.component';
+import {StationCreateComponent} from './station-create/station-create.component';
+
 
 @NgModule({
   declarations: [
@@ -69,7 +72,9 @@ import { UserManagComponent } from './user-manag/user-manag.component';
     RegisterFieldComponent,
     InfoComponent,
     FormularComponent,
-    UserManagComponent
+    UserManagComponent,
+    StationCreateComponent,
+    StationListComponent
   ],
     imports: [
         BrowserModule,
