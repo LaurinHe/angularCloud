@@ -16,6 +16,8 @@ export class SelectorStationComponent implements OnInit {
 
   selectedStation: IStation;
 
+  inputDisabled = true;
+
   constructor(private stationService: StationService) { }
 
   ngOnInit() {
@@ -25,6 +27,7 @@ export class SelectorStationComponent implements OnInit {
   giveStations() {
     this.stationService.getStations(this.selectedCountry.countryid)
       .subscribe(data => this.stations = data);
+    this.inputDisabled = false;
   }
 
   changeSelectedStation(givenStation: IStation) {

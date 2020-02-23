@@ -1,16 +1,21 @@
-<mat-card>
-  <canvas baseChart width="200" height="100"
-          [datasets]="myChartData"
+<button mat-raised-button color="primary" (click)="getDataFromServer()" matTooltip="Fetches your data from the server">
+  Get the data
+</button>
+
+
+<button mat-raised-button color="accent" (click)="buttonHandler()" matTooltip="Click to show or update the graph">
+  Show the graph
+</button><mat-card>
+
+  <canvas baseChart width="200" height="70"
+          [datasets]="myChartDataSets"
           [labels]="myChartLabels"
           [options]="myChartOptions"
           [legend]="myChartLegend"
           [chartType]="myChartType"></canvas>
 </mat-card>
 
-<button mat-raised-button color="primary" (click)="getDataFromServer()">Get the data</button>
-<button (click)="buttonHandler()">Show the graph</button>
 
-<p *ngFor="let temp of myTempSet">{{temp}}</p>
 
 
 

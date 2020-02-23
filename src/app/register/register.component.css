@@ -1,0 +1,7 @@
+button, mat-icon {
+  padding: 5px;
+}
+
+#small1, #small2 {
+  font-size: smaller;
+}

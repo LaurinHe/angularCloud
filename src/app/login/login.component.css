@@ -1,0 +1,12 @@
+mat-icon {
+  padding: 5px;
+}
+button {
+  margin-right: 5px;
+}
+
+mat-card {
+  background-image: url("../../assets/data/cloud_background.jpeg");
+  background-position: bottom;
+  background-size: 100%;
+}

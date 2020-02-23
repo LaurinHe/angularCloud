@@ -1,0 +1,10 @@
+<p>UserList:</p>
+
+<mat-list>
+  <mat-list-item *ngFor="let user of userList">
+    {{user.id}}{{user.username}}
+    <button mat-raised-button color="warn" (click)="deleteButtonHandler(user.username)">Delete</button>
+
+  </mat-list-item>
+</mat-list>
+

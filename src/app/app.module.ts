@@ -11,19 +11,28 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
 import { MenuComponent } from './menu/menu.component';
 import {
-  _MatMenuDirectivesModule, MatDividerModule,
-  MatIconModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatSelectModule,
-  MatGridListModule,
-  MatTableModule, MatCardModule, MatAutocompleteModule, MatCheckboxModule, MatButtonModule, MatToolbarModule, MAT_DATE_LOCALE
+    _MatMenuDirectivesModule,
+    MatDividerModule,
+    MatIconModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatGridListModule,
+    MatTableModule,
+    MatCardModule,
+    MatAutocompleteModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MAT_DATE_LOCALE,
+    MatTooltipModule,
+  MatSnackBarModule,
 } from '@angular/material';
 import { DatepickerComponent } from './selectors/datepicker/datepicker.component';
 import { MatDatepickerModule} from '@angular/material';
 import {StationService} from './station.service';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MyChartComponent } from './my-chart/my-chart.component';
 import { LoginComponent } from './login/login.component';
 import { SelectorCountryComponent } from './selectors/selector-country/selector-country.component';
@@ -32,6 +41,18 @@ import { SelectorDataComponent } from './selectors/selector-data/selector-data.c
 import { SendButtonComponent } from './send-button/send-button.component';
 import { LoginFieldComponent } from './login-field/login-field.component';
 import { MatRadioModule} from '@angular/material';
+import { RegisterFieldComponent} from './register-field/register-field.component';
+
+import { httpInterceptorProviders } from './auth/auth-interceptor';
+import {RegisterComponent} from './register/register.component';
+import { VisualizationComponent } from './visualization/visualization.component';
+import { InfoComponent } from './info/info.component';
+import { FormularComponent } from './formular/formular.component';
+import { UserManagComponent } from './user-manag/user-manag.component';
+
+import {StationListComponent} from './station-list/station-list.component';
+import {StationCreateComponent} from './station-create/station-create.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +65,16 @@ import { MatRadioModule} from '@angular/material';
     SelectorStationComponent,
     SelectorDataComponent,
     SendButtonComponent,
-    LoginFieldComponent
+    LoginFieldComponent,
+    LoginComponent,
+    RegisterComponent,
+    VisualizationComponent,
+    RegisterFieldComponent,
+    InfoComponent,
+    FormularComponent,
+    UserManagComponent,
+    StationCreateComponent,
+    StationListComponent
   ],
     imports: [
         BrowserModule,
@@ -70,9 +100,12 @@ import { MatRadioModule} from '@angular/material';
         MatCheckboxModule,
         MatButtonModule,
         MatToolbarModule,
-        MatRadioModule
+        MatRadioModule,
+        FormsModule,
+        MatTooltipModule,
+      MatSnackBarModule
     ],
-  providers: [StationService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
+  providers: [httpInterceptorProviders, StationService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

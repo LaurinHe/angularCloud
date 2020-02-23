@@ -1,0 +1,65 @@
+<mat-card><div *ngIf="isSignedUp; else signupForm">
+  <mat-icon color="accent">done</mat-icon>
+  <p>Your registration is successful. Please login!</p>
+  <button mat-raised-button color="primary" routerLink="auth/login"></button>
+</div>
+
+<ng-template #signupForm>
+  <div class="row col-sm-6" style="max-width:450px;">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+      <div class="form-group">
+        <mat-form-field>
+        <input matInput placeholder="Your name" type="text" class="form-control" name="name" [(ngModel)]="form.name" #name="ngModel" required />
+          <mat-error *ngIf="f.submitted && name.invalid && name.errors.required">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+        <input matInput type="text" placeholder="Username" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
+               required />
+          <mat-error *ngIf="f.submitted && username.invalid && username.errors.required">
+            Username is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+        <input matInput type="password" placeholder="Password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
+               required minlength="6" />
+        <mat-error *ngIf="f.submitted && password.invalid && password.errors.required">
+          Password is required
+        </mat-error>
+        <mat-error *ngIf="f.submitted && password.invalid && password.errors.minlength">
+          At least 6 characters
+        </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field id="small1">
+          <input matInput placeholder="Where was your Mother born?"/>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field id="small2">
+          <input matInput placeholder="What is your favourite Movie?"/>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <button mat-raised-button color="accent">Register</button>
+        <mat-card-content *ngIf="f.submitted && isSignUpFailed">
+          <mat-icon color="warn">warning</mat-icon>
+          <span><strong>Signup failed: {{errorMessage}}</strong></span>
+        </mat-card-content>
+      </div>
+    </form>
+  </div>
+</ng-template>
+</mat-card>

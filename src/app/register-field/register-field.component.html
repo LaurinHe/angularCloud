@@ -1,0 +1,34 @@
+<mat-card>
+  <mat-form-field>
+    <input matInput placeholder="First Name" [value]="firstName">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Last Name" [value]="lastName">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Create Username" [value]="username">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Create Password" [value]="password">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Retype Password" [value]="retypedPassword">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>What is your favourite movie?</mat-label>
+    <input matInput placeholder="Your answer" [value]="safetyAnswer1">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Where was your mother born?</mat-label>
+    <input matInput placeholder="Your answer" [value]="safetyAnswer2">
+  </mat-form-field>
+
+  <button mat-raised-button color="accent">Register</button>
+
+</mat-card>

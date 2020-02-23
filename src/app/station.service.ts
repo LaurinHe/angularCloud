@@ -4,23 +4,24 @@ import {IStation} from './Interfaces/IStation';
 import {ICountry} from './Interfaces/ICountry';
 import {Observable, BehaviorSubject} from 'rxjs';
 import {IDataAll} from './Interfaces/IDataAll';
+import {AppSettings} from './AppSettings';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StationService {
 
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = AppSettings.API_ENDPOINT;
 
   private selectedCountryID = 'GER';
 
-  private countryUrlFAKE = '/assets/data/fakeCountry.json';
+  private countryUrlFAKE = 'assets/data/fakeCountry.json';
 
-  private stationUrlBase = this.baseUrl.concat('/api/contstat/stations/withcountryname/?countryid=');
+  // private stationUrlBase = this.baseUrl.concat('/api/contstat/stations/withcountryname/?countryid=');
+  //
+  // private stationUrl = this.stationUrlBase.concat(this.selectedCountryID);
 
-  private stationUrl = this.stationUrlBase.concat(this.selectedCountryID);
-
-  private countryUrl = this.baseUrl.concat('/api/countries/list');
+  private countryUrl = this.baseUrl.concat('api/countries/list');
 
   private selCountrySource = new BehaviorSubject<ICountry>({countryid: '', countryname: ''});
   currentSelCountry = this.selCountrySource.asObservable();
@@ -60,20 +61,29 @@ export class StationService {
   constructor(private http: HttpClient) { }
 
   getStations(givenURL: string): Observable<IStation[]> {
-    return this.http.get<IStation[]>(this.baseUrl + '/api/contstat/stations/withcountryname?countryid=' + givenURL);
+    return this.http.get<IStation[]>(this.baseUrl + 'api/contstat/stations/withcountryname?countryid=' + givenURL);
   }
 
-  getCountries(): Observable<ICountry[]> {
+   getCountries(): Observable<ICountry[]> {
     return this.http.get<ICountry[]>(this.countryUrl);
   }
 
   getData(givenURL: string): Observable<IDataAll[]> {
-    return this.http.get<IDataAll[]>(this.baseUrl + '/api/data/list' + givenURL);
+    return this.http.get<IDataAll[]>(this.baseUrl + 'api/data/list' + givenURL);
   }
 
   getFakeData(givenURL: string): Observable<IDataAll[]> {
     return this.http.get<IDataAll[]>('assets/data/' + givenURL);
   }
+
+  getStation(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
+
+  createStation(station: IStation) { // : Observable<IStation> {
+    // return this.http.post(`${this.baseUrl + 'api/contstat/stations'}`, station);
+  }
+
 }
 
 

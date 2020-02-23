@@ -1,0 +1,9 @@
+button {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+mat-form-field {
+  margin: 5px;
+}

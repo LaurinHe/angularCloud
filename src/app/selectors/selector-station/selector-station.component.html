@@ -1,10 +1,13 @@
-<button (click)="giveStations()" *ngIf="selectedCountry.countryname!=''">Give stations</button>
+<button mat-raised-button color="primary" (click)="giveStations()"  [disabled]="selectedCountry.countryname==''" matTooltip="Fetches all the stations in your selected country">
+  Give stations
+</button>
 
-<mat-radio-group>
-  <mat-radio-button *ngFor="let station of stations" [value]="station" (click)="changeSelectedStation(station)">
-    {{station.name}}
-  </mat-radio-button>
-</mat-radio-group>
-
-<p *ngIf="selectedStation">{{selectedStation.name}}</p>
+<mat-form-field>
+  <mat-label>Select a Station</mat-label>
+  <mat-select [disabled]="inputDisabled">
+    <mat-option *ngFor="let station of stations" [value]="station" (click)="changeSelectedStation(station)">>
+      {{station.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 

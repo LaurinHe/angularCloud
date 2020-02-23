@@ -1,17 +1,15 @@
 <mat-form-field>
   <input matInput [matDatepicker]="myDatePicker1" [min]="minDate1" [max]="maxDate1" (dateChange)="changeDateHandler1($event)"
-         [formControl]="date1" placeholder="Choose a start-date">
+         placeholder="Choose a start-date">
   <mat-datepicker-toggle matSuffix [for]="myDatePicker1" ></mat-datepicker-toggle>
   <mat-datepicker #myDatePicker1></mat-datepicker>
 </mat-form-field>
 
-<p>{{date1String}}</p>
 
 <mat-form-field>
   <input matInput [matDatepicker]="myDatePicker2" [min]=minDate2 [max]="maxDate2" (dateChange)="changeDateHandler2($event)"
-         [formControl]="date2" placeholder="Choose an end-date">
+         placeholder="Choose an end-date">
   <mat-datepicker-toggle matSuffix [for]="myDatePicker2" ></mat-datepicker-toggle>
-  <mat-datepicker #myDatePicker2></mat-datepicker>
+  <mat-datepicker #myDatePicker2 ></mat-datepicker>
 </mat-form-field>
 
-<p>{{date2String}}</p>

@@ -1,3 +1,51 @@
-<button mat-icon-button disabled>
-  <mat-icon>person_outline</mat-icon>
-</button>
+<mat-card>
+<div *ngIf="isLoggedIn; else loggedOut">
+  Logged in as {{roles}}.
+  <a routerLink="/home" routerLinkActive="active">Vis</a>
+</div>
+
+<ng-template #loggedOut>
+  <div class="row col-sm-6" style="max-width:350px;">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <div class="form-group">
+        <mat-form-field>
+        <label for="username">Username</label>
+        <input matInput type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
+               required />
+          <mat-error *ngIf="f.submitted && username.invalid && username.errors.required">
+            Username is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+        <label for="password">Password</label>
+        <input matInput type="password" name="password" [(ngModel)]="form.password" #password="ngModel"
+               required minlength="6" />
+          <mat-error *ngIf="f.submitted && password.invalid && password.errors.required">
+            Password is required
+          </mat-error>
+          <mat-error *ngIf="f.submitted && password.invalid && password.errors.minlength">
+            Password must be at least 6 characters
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <button mat-raised-button color="primary" class="btn btn-primary">Login</button>
+        <button mat-raised-button color="warn" routerLink="/reset-password"><small>Forgot your Password?</small></button>
+        <mat-card-content *ngIf="f.submitted && isLoginFailed">
+          <mat-icon color="warn">warning</mat-icon>
+          <span><strong>Login failed: {{errorMessage}}</strong></span>
+        </mat-card-content>
+      </div>
+    </form>
+    <hr />
+    <p>Don't have an account?</p>
+    <button mat-raised-button color="accent" routerLink="/signup">Sign Up</button>
+  </div>
+</ng-template>
+</mat-card>
+
+
