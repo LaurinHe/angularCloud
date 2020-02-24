@@ -10,7 +10,7 @@ import {IStation} from '../../Interfaces/IStation';
 })
 export class SelectorStationComponent implements OnInit {
 
-  stations = [];
+  stations: IStation[] = [];
 
   selectedCountry: ICountry;
 

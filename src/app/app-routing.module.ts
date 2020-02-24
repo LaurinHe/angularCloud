@@ -8,6 +8,7 @@ import { InfoComponent } from './info/info.component';
 import { VisualizationComponent } from './visualization/visualization.component';
 import {FormularComponent} from './formular/formular.component';
 import { UserManagComponent } from './user-manag/user-manag.component';
+import {StationListComponent} from './StationOps/station-list/station-list.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'user-management',
     component: UserManagComponent
+  },
+  {
+    path: 'stations',
+    component: StationListComponent
   },
   {
     path: '',

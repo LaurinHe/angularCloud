@@ -27,7 +27,7 @@ export class StationService {
   currentSelCountry = this.selCountrySource.asObservable();
 
   private selStationSource = new BehaviorSubject<IStation>({
-    id: '',
+    id: 0,
   name: '',
   latitude: 0,
   longitude: 0,

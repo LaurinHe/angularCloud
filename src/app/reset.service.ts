@@ -28,11 +28,11 @@ export class ResetService {
   }
 
   setCurator(): Observable<any> {
-    return this.http.get(this.baseUrlUM + 'setcurator'); // get to set
+    return this.http.get(this.baseUrlUM + '/setcurator'); // get to set
   }
 
   resetpassword(): Observable<any> {
-    return this.http.get(this.baseUrlUM + 'resetpassword'); // get to set
+    return this.http.get(this.baseUrlUM + '/resetpassword'); // get to set
   }
 
 

@@ -27,7 +27,7 @@ import {
     MatToolbarModule,
     MAT_DATE_LOCALE,
     MatTooltipModule,
-  MatSnackBarModule,
+    MatSnackBarModule, MatPaginatorModule,
 } from '@angular/material';
 import { DatepickerComponent } from './selectors/datepicker/datepicker.component';
 import { MatDatepickerModule} from '@angular/material';
@@ -50,8 +50,8 @@ import { InfoComponent } from './info/info.component';
 import { FormularComponent } from './formular/formular.component';
 import { UserManagComponent } from './user-manag/user-manag.component';
 
-import {StationListComponent} from './station-list/station-list.component';
-import {StationCreateComponent} from './station-create/station-create.component';
+import {StationListComponent} from './StationOps/station-list/station-list.component';
+import {StationCreateComponent} from './StationOps/station-create/station-create.component';
 
 
 @NgModule({
@@ -74,7 +74,7 @@ import {StationCreateComponent} from './station-create/station-create.component'
     FormularComponent,
     UserManagComponent,
     StationCreateComponent,
-    StationListComponent
+    StationListComponent,
   ],
     imports: [
         BrowserModule,
@@ -103,7 +103,8 @@ import {StationCreateComponent} from './station-create/station-create.component'
         MatRadioModule,
         FormsModule,
         MatTooltipModule,
-      MatSnackBarModule
+        MatSnackBarModule,
+        MatPaginatorModule
     ],
   providers: [httpInterceptorProviders, StationService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent]

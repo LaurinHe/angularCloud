@@ -38,7 +38,7 @@ export class MyChartComponent implements OnInit {
     {data: this.myMinTemp, label: 'Min temperature'},
     {data: this.myMaxTemp, label: 'Max temperature'},
     {data: this.myStatPres, label: 'Station pressure'}
-  ]
+  ];
 
   public myChartLegend = true;
 

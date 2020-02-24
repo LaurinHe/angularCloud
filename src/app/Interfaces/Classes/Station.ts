@@ -1,7 +1,7 @@
 import {IStation} from '../IStation';
 
-export class Station implements IStation{
-  id: string;
+export class Station implements IStation {
+  id: number;
   name: string;
   latitude: number;
   longitude: number;
@@ -11,7 +11,7 @@ export class Station implements IStation{
   hcncrnflag: string;
   wmoid: string;
 
-  constructor(id: string, name: string, latitude: number, longitude: number, elevation: number, state: string) {
+  constructor(id: number, name: string, latitude: number, longitude: number, elevation: number, state: string) {
     this.id = id;
     this.name = name;
     this.latitude = latitude;

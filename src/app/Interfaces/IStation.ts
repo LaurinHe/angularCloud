@@ -1,5 +1,5 @@
 export interface IStation {
-  id: string;
+  id: number;
   name: string;
   latitude: number;
   longitude: number;

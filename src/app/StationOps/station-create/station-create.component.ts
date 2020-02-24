@@ -1,5 +1,5 @@
-import { StationService } from '../station.service';
-import { IStation } from '../Interfaces/IStation';
+import { StationService } from '../../station.service';
+import { IStation } from '../../Interfaces/IStation';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
