@@ -18,7 +18,7 @@ author: Florian Lang
     <a class="btn btn-clear" title="Download JSON" [href]="downloadJson" download="download.json">get the file</a>
   </div>
 </div>
-<div class="mat-elevation-z8">
+<div  class="mat-elevation-z8">
   <table mat-table [dataSource]= "dataSourceStations" matSort>
     <ng-container matColumnDef="select">
       <!--<th mat-header-cell *matHeaderCellDef>
@@ -36,28 +36,28 @@ author: Florian Lang
       </td>
     </ng-container>
 
-    <ng-container matColumnDef="position">
+    <ng-container matColumnDef="position" >
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Station Id</th>
       <td mat-cell *matCellDef="let station"> {{station.id}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="name" mat-sort-header>
-      <th mat-header-cell *matHeaderCellDef>Station Name</th>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Station Name</th>
       <td mat-cell *matCellDef="let station"> {{station.name}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="latitude" mat-sort-header>
-      <th mat-header-cell *matHeaderCellDef>Latitude</th>
+    <ng-container matColumnDef="latitude">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Latitude</th>
       <td mat-cell *matCellDef="let station"> {{station.latitude}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="longitude" mat-sort-header>
-      <th mat-header-cell *matHeaderCellDef>Longitude</th>
+    <ng-container matColumnDef="longitude">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Longitude</th>
       <td mat-cell *matCellDef="let station"> {{station.longitude}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="elevation" mat-sort-header>
-      <th mat-header-cell *matHeaderCellDef>Elevation</th>
+    <ng-container matColumnDef="elevation">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Elevation</th>
       <td mat-cell *matCellDef="let station"> {{station.elevation}} </td>
     </ng-container>
 

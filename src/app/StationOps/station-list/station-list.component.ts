@@ -57,6 +57,7 @@ export class StationListComponent implements OnInit {
         this.dataSourceStations = new MatTableDataSource<IStation>(data);
         this.dataSourceStations.paginator = this.paginator;
         this.dataSourceStations.sort = this.sort;
+
       });
     console.log('fetched stations for countryid: ' + this.selectedCountry.countryid);
   }

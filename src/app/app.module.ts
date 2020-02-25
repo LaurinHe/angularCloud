@@ -27,7 +27,7 @@ import {
     MatToolbarModule,
     MAT_DATE_LOCALE,
     MatTooltipModule,
-    MatSnackBarModule, MatPaginatorModule,
+    MatSnackBarModule, MatPaginatorModule, MatSortModule,
 } from '@angular/material';
 import { DatepickerComponent } from './selectors/datepicker/datepicker.component';
 import { MatDatepickerModule} from '@angular/material';
@@ -104,7 +104,8 @@ import {StationCreateComponent} from './StationOps/station-create/station-create
         FormsModule,
         MatTooltipModule,
         MatSnackBarModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatSortModule
     ],
   providers: [httpInterceptorProviders, StationService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent]
