@@ -7,3 +7,7 @@ button {
 mat-form-field {
   margin: 5px;
 }
+
+mat-radio-button {
+  margin: 5px;
+}

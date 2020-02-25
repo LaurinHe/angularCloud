@@ -5,25 +5,29 @@ author: Laurin Hecken
   Get the data
 </button>
 
+<mat-radio-group [(ngModel)]="myChartType">
+  <mat-radio-button value="bar">Bar</mat-radio-button>
+  <mat-radio-button value="line">Line</mat-radio-button>
+</mat-radio-group>
 
 <button mat-raised-button color="accent" (click)="buttonHandler()" matTooltip="Click to show or update the graph">
   Show the graph
-</button><mat-card>
+</button>
+
+
+
+<mat-card>
 
   <canvas baseChart width="200" height="70"
           [datasets]="myChartDataSets"
           [labels]="myChartLabels"
           [options]="myChartOptions"
           [legend]="myChartLegend"
-          [chartType]="myChartType"></canvas>
+          [chartType]="myChartType">
+  </canvas>
 </mat-card>
-<mat-form-field>
-  <mat-label>Select your Graph</mat-label>
-  <mat-select [(ngModel)]="myChartType">
-    <mat-option value="bar">Bar</mat-option>
-    <mat-option value="line">Line</mat-option>
-  </mat-select>
-</mat-form-field>
+
+
 
 
 
