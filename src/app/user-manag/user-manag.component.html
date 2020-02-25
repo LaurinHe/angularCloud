@@ -1,13 +1,18 @@
 <!--
 author: Laurin Hecken
 -->
-<p>UserList:</p>
+
 
 <mat-list>
+  <h3 mat-subheader>User List:</h3>
   <mat-list-item *ngFor="let user of userList">
-    {{user.id}}{{user.name}}{{user.username}}
+    <mat-icon mat-list-icon>folder</mat-icon>
+    <h4 mat-line>{{user.username}}</h4>
+    <p mat-line>ID={{user.id}}</p>
     <button mat-raised-button color="warn" (click)="deleteButtonHandler(user.username)">Delete</button>
 
   </mat-list-item>
 </mat-list>
+
+
 
