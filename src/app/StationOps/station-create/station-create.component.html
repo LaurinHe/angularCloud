@@ -1,59 +1,33 @@
 <!--
-<h3>Create Station</h3>
-<div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">ID</label>
-      <input type="text" class="form-control" id="id" required [(ngModel)]="station.id" name="Id">
-    </div>
-
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" required [(ngModel)]="station.name" name="lastName">
-    </div>
-
-    <div class="form-group">
-      <label for="name">Latitude</label>
-      <input type="text" class="form-control" id="latitude" required [(ngModel)]="station.latitude" name="latitude">
-    </div>
-
-    <div class="form-group">
-      <label for="name">Longitude</label>
-      <input type="text" class="form-control" id="longitude" required [(ngModel)]="station.longitude" name="longitude">
-    </div>
-
-    <div class="form-group">
-      <label for="name">Elevation</label>
-      <input type="text" class="form-control" id="elevation" required [(ngModel)]="station.elevation" name="elevation">
-    </div>
-
-    <div class="form-group">
-      <label for="name">State</label>
-      <input type="text" class="form-control" id="state" required [(ngModel)]="station.state" name="state">
-    </div>
-
-    <div class="form-group">
-      <label for="name">GSN Flag</label>
-      <input type="text" class="form-control" id="gsnflag" required [(ngModel)]="station.gsnflag" name="gsnflag">
-    </div>
-
-    <div class="form-group">
-      <label for="name">HCN Flag</label>
-      <input type="text" class="form-control" id="hcnrnflag" required [(ngModel)]="station.hcnrnflag" name="hcnrnflag">
-    </div>
-
-    <div class="form-group">
-      <label for="name">WMO ID</label>
-      <input type="text" class="form-control" id="wmoid" required [(ngModel)]="station.wmoid" name="wmoid">
-    </div>
-
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
-</div>
-
-<div [hidden]="!submitted">
-  <h4>You submitted successfully!</h4>
-  &lt;!&ndash; <button class="btn btn-success" (click)="newEmployee()">Add</button> &ndash;&gt;
-</div>
-
+author: Florian Lang
 -->
+<h3>Create Station</h3>
+<div>
+  <form [formGroup]="stationForm" (ngSubmit)="onSubmit(stationForm.value)">
+
+<mat-form-field>
+  <input formControlName="id" matInput placeholder="Enter the station id as a number">
+</mat-form-field>
+
+<mat-divider></mat-divider>
+
+<mat-form-field>
+  <input formControlName="name" matInput placeholder="Enter the name of the new station">
+</mat-form-field>
+<mat-form-field>
+  <input formControlName="latitude" matInput placeholder="Enter the latitude (number required)">
+</mat-form-field>
+
+  <mat-form-field>
+    <input formControlName="longitude" matInput placeholder="Enter the longitude (number required)">
+  </mat-form-field>
+  <mat-form-field>
+    <input formControlName="elevation" matInput placeholder="Enter the elevation (number required)">
+  </mat-form-field>
+    <app-selector-country></app-selector-country>
+
+    <button class="button" type="submit">Submit</button>
+
+  </form>
+
+</div>

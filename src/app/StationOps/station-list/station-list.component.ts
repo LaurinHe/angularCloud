@@ -7,12 +7,12 @@ import {StationService} from '../../station.service';
 import {ICountry} from '../../Interfaces/ICountry';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
 import {SelectionModel} from '@angular/cdk/collections';
+import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 /**
  * Class for viewing the Stations
  * @author Florian Lang
  */
-
 @Component({
   selector: 'app-station-list',
   templateUrl: './station-list.component.html',
@@ -21,19 +21,26 @@ import {SelectionModel} from '@angular/cdk/collections';
 export class StationListComponent implements OnInit {
 
   constructor(private stationService: StationService,
-              private router: Router) {}
+              private router: Router,
+              private sanitizer: DomSanitizer) {}
   stations: IStation[] = [];
+
+  private downloadJson;
 
   dataSourceStations = new MatTableDataSource<IStation>(this.stations);
 
-  selectedCountry: ICountry;
+  private selectedCountry: ICountry;
 
   displayedColumns: string[] = ['select', 'position', 'name', 'latitude', 'longitude', 'elevation'];
 
   // For selecting row
-  selection = new SelectionModel<IStation>(false, [this.stations[0]]);
+  private selection = new SelectionModel<IStation>(false, [this.stations[0]]);
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+
+  private theJSON: string;
+  private uri: SafeUrl;
+  private isDownloadable = false;
 
   ngOnInit() {
     this.dataSourceStations.paginator = this.paginator;
@@ -67,6 +74,25 @@ export class StationListComponent implements OnInit {
 
   edit(stationid: number) {
     this.router.navigate(['editstation', stationid]);
+  }
+
+  generateDownloadJsonUri() {
+    this.theJSON = JSON.stringify(this.stations);
+    this.uri = this.sanitizer.bypassSecurityTrustUrl('data:text/json;charset=UTF-8,' + encodeURIComponent(this.theJSON));
+    this.downloadJson = this.uri;
+    console.log('Downloading Data as Json the first station is: ' + this.stations[0].name + ' reachable at ' + this.uri);
+    this.isDownloadable = true;
+  }
+
+  downloadJsonToDoc(myJson) {
+    const sJson = JSON.stringify(myJson);
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/json;charset=UTF-8,' + encodeURIComponent(sJson));
+    element.setAttribute('download', 'primer-server-task.json');
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click(); // simulate click
+    document.body.removeChild(element);
   }
 
   /*deleteStation(id: number) {

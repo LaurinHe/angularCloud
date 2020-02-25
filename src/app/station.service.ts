@@ -80,8 +80,8 @@ export class StationService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  createStation(station: IStation) { // : Observable<IStation> {
-    // return this.http.post(`${this.baseUrl + 'api/contstat/stations'}`, station);
+  createStation(station: IStation): Observable<any> {
+     return this.http.post(`${this.baseUrl + 'api/contstat/stations'}`, station);
   }
 
 }

@@ -1,37 +1,6 @@
-<!--<div class="panel panel-primary">
-  <app-selector-country></app-selector-country>
-  <div class="panel-heading">
-    <h2>Station List</h2>
-  </div>
-  <div class="panel-body">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
-        <th>Elevation</th>
-        <th>State</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let station of stations | async">
-        <td>{{station.id}}</td>
-        <td>{{station.name}}</td>
-        <td>{{station.latitude}}</td>
-        <td>{{station.longitude}}</td>
-        <td>{{station.elevation}}</td>
-        <td>{{station.state}}</td>
-
-        &lt;!&ndash;<td>
-          <button (click)="stationDetails(station.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
-        </td>&ndash;&gt;
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</div>-->
+<!--
+author: Florian Lang
+-->
 <div>
 <app-selector-country></app-selector-country>
 <button mat-raised-button color="primary" (click)="getStationsForcountryFromServer()" matTooltip="Fetches your Stations from the server">
@@ -41,7 +10,14 @@
     Edit Selected Station
   </button>
 </div>
-
+<div>
+  <button id="DownloadJson" mat-raised-button color="primary" (click)="generateDownloadJsonUri()" matTooltip="Gets the Data as Json Document">
+    Generate Json File
+  </button>
+  <div [hidden]="!isDownloadable">
+    <a class="btn btn-clear" title="Download JSON" [href]="downloadJson" download="download.json">get the file</a>
+  </div>
+</div>
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]= "dataSourceStations">
     <ng-container matColumnDef="select">

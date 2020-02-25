@@ -1,5 +1,11 @@
 import {IStation} from '../IStation';
 
+
+/**
+ * Class for implementing a IStation used for creation of a station
+ * @author Florian Lang
+ */
+
 export class Station implements IStation {
   id: number;
   name: string;
