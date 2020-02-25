@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl} from '@angular/forms';
 import { StationService} from '../../station.service';
 
+/**
+ * Class for the selection of data. Only the selected data is going to be visualized
+ * @author Laurin Hecken
+ */
 @Component({
   selector: 'app-selector-data',
   templateUrl: './selector-data.component.html',

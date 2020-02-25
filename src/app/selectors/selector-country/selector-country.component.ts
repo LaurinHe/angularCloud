@@ -3,6 +3,10 @@ import { StationService} from '../../station.service';
 import {ICountry} from '../../Interfaces/ICountry';
 import {BehaviorSubject} from 'rxjs';
 
+/**
+ * Class for the selection of the country. Depending on the country only the stations in this country can be selected
+ * @author Laurin Hecken
+ */
 @Component({
   selector: 'app-selector-country',
   templateUrl: './selector-country.component.html',

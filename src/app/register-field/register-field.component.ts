@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Class for the registration. Users can create a new account
+ * @author Laurin Hecken
+ */
 @Component({
   selector: 'app-register-field',
   templateUrl: './register-field.component.html',

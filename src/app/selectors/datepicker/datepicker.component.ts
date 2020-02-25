@@ -3,8 +3,10 @@ import {FormControl} from '@angular/forms';
 import {MatDatepickerInputEvent} from '@angular/material';
 import {StationService} from '../../station.service';
 
-/** @title Basic datepicker */
-
+/**
+ * Class for the selection of the min and max date. The data between the two dates is going to be visualized
+ * @author Laurin Hecken
+ */
 @Component({
   selector: 'app-datepicker',
   templateUrl: './datepicker.component.html',

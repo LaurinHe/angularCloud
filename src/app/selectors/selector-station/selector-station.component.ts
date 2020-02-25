@@ -3,6 +3,10 @@ import {StationService} from '../../station.service';
 import {ICountry} from '../../Interfaces/ICountry';
 import {IStation} from '../../Interfaces/IStation';
 
+/**
+ * Class for the selection of the station. The data of this station is going to be visualized
+ * @author Laurin Hecken
+ */
 @Component({
   selector: 'app-selector-station',
   templateUrl: './selector-station.component.html',

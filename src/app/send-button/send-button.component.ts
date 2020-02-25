@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {IStation} from '../Interfaces/IStation';
 import {StationService} from '../station.service';
 
+/**
+ * Class for the send button, which fetches the data from the db when pressed
+ * @author Laurin Hecken
+ */
 @Component({
   selector: 'app-send-button',
   templateUrl: './send-button.component.html',

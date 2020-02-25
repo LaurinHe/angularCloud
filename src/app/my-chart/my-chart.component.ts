@@ -4,6 +4,10 @@ import {IDataAll} from '../Interfaces/IDataAll';
 import {IStation} from '../Interfaces/IStation';
 import {FormControl} from '@angular/forms';
 
+/**
+ * Class for the chart. The data from the db is visualized here
+ * @author Laurin Hecken
+ */
 @Component({
   selector: 'app-my-chart',
   templateUrl: './my-chart.component.html',

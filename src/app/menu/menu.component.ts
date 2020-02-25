@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 /**
- * @title Menu with icons
+ * Class for the toolbar / menu in the top left corner. Used to navigate through the app
+ * @author Laurin Hecken
  */
 @Component({
   selector: 'app-menu',

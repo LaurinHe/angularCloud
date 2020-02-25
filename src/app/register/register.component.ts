@@ -3,6 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { SignUpInfo } from '../auth/signup-info';
 
+/**
+ * Class for the registration. Users can create a new account
+ * @author Laurin Hecken & Florian Lang
+ */
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',

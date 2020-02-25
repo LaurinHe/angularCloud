@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ResetPwInfo } from '../auth/resetpw-info';
 import { ResetService } from '../reset.service';
 
+/**
+ * Class for the form, which has to be filled in order to reset the Password
+ * @author Laurin Hecken
+ */
 @Component({
   selector: 'app-formular',
   templateUrl: './formular.component.html',

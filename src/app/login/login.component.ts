@@ -6,6 +6,10 @@ import { AuthLoginInfo } from '../auth/login-info';
 import {Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material'; /*************************/
 
+/**
+ * Class for the login - only logged in users can use the website properly
+ * @author Laurin Hecken & Florian Lang
+ */
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
