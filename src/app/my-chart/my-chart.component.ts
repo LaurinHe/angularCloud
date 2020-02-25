@@ -89,7 +89,7 @@ export class MyChartComponent implements OnInit {
     for (let i = 0; i < this.givenData.length; i++) {
       this.myChartLabels.push(this.givenData[i].date);
 
-      this.myTempSet.push(this.givenData[i].temperature);
+      this.myTempSet.push((this.givenData[i].temperature - 32) * (5 / 9));
 
       if (this.givenData[i].precipitation !== 99.99){
         this.myPrecSet.push(this.givenData[i].precipitation);
