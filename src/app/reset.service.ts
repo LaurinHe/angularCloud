@@ -32,7 +32,7 @@ export class ResetService {
   }
 
   resetpassword(info: ResetPwInfo): Observable<string> {
-    return this.http.post<string>(this.baseUrlUM + '/resetpassword', info, httpOptions); // get to set
+    return this.http.put<string>(this.baseUrl + 'api/auth/resetpassword', info, httpOptions);
   }
 
 

@@ -1,13 +1,13 @@
 export class ResetPwInfo {
   username: string;
   newpassword: string;
-  secretanswerone: string;
-  secretanswertwo: string;
+  answerquestone: string;
+  answerquesttwo: string;
 
-  constructor(username: string, newpassword: string, secretanswerone: string, secretanswertwo: string) {
+  constructor(username: string, newpassword: string, answerquestone: string, answerquesttwo: string) {
     this.username = username;
     this.newpassword = newpassword;
-    this.secretanswerone = secretanswerone;
-    this.secretanswertwo = secretanswertwo;
+    this.answerquestone = answerquestone;
+    this.answerquesttwo = answerquesttwo;
   }
 }

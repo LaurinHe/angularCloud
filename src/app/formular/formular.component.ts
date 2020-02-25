@@ -30,8 +30,8 @@ export class FormularComponent implements OnInit {
     this.resetPwInfo = new ResetPwInfo(
       this.form.username,
       this.form.newpassword,
-      this.form.secretanswerone,
-      this.form.secretanswertwo);
+      this.form.answerquestone,
+      this.form.answerquesttwo);
 
     this.resetService.resetpassword(this.resetPwInfo).subscribe(
       data => {

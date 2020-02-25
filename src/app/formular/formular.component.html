@@ -17,9 +17,10 @@ author: Laurin Hecken
 
       <div class="form-group">
         <mat-form-field>
-          <input matInput type="text" placeholder="Where was your mother born?" class="form-control" name="secretanswerone" [(ngModel)]="form.secretanswerone" #secretanswerone="ngModel"
+          <input matInput type="text" placeholder="Where was your mother born?" class="form-control" name="answerquestone"
+                 [(ngModel)]="form.answerquestone" #answerquestone="ngModel"
                  required />
-          <mat-error *ngIf="f.submitted && secretanswerone.invalid && secretanswerone.errors.required">
+          <mat-error *ngIf="f.submitted && answerquestone.invalid && answerquestone.errors.required">
             Answer is required
           </mat-error>
         </mat-form-field>
@@ -27,9 +28,10 @@ author: Laurin Hecken
 
       <div class="form-group">
         <mat-form-field>
-          <input matInput type="text" placeholder="What is your favourite movie?" class="form-control" name="secretanswertwo" [(ngModel)]="form.secretanswertwo" #secretanswertwo="ngModel"
+          <input matInput type="text" placeholder="What is your favourite movie?" class="form-control" name="answerquesttwo"
+                 [(ngModel)]="form.answerquesttwo" #answerquesttwo="ngModel"
                  required/>
-          <mat-error *ngIf="f.submitted && secretanswertwo.invalid && secretanswertwo.errors.required">
+          <mat-error *ngIf="f.submitted && answerquesttwo.invalid && answerquesttwo.errors.required">
             Answer is required
           </mat-error>
         </mat-form-field>

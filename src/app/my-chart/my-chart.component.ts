@@ -36,11 +36,11 @@ export class MyChartComponent implements OnInit {
   private myStatPres: number[] = [];
 
   myChartDataSets = [
-    {data: this.myTempSet, label: 'Temperature'},
+    {data: this.myTempSet, label: 'Temperature [°C]'},
     {data: this.myPrecSet, label: 'Precipitation'},
     {data: this.myWindSet, label: 'Wind speed'},
-    {data: this.myMinTemp, label: 'Min temperature'},
-    {data: this.myMaxTemp, label: 'Max temperature'},
+    {data: this.myMinTemp, label: 'Min temperature [°C]'},
+    {data: this.myMaxTemp, label: 'Max temperature [°C]'},
     {data: this.myStatPres, label: 'Station pressure'}
   ];
 
@@ -99,8 +99,8 @@ export class MyChartComponent implements OnInit {
         this.myPrecSet.push(this.givenData[i].precipitation);
       }
       this.myWindSet.push(this.givenData[i].windSpeed);
-      this.myMinTemp.push(this.givenData[i].minTemperature);
-      this.myMaxTemp.push(this.givenData[i].maxTemperature);
+      this.myMinTemp.push((this.givenData[i].minTemperature - 32) * (5 / 9));
+      this.myMaxTemp.push((this.givenData[i].maxTemperature - 32) * (5 / 9));
       this.myStatPres.push(this.givenData[i].stationPressure / 100);
     }
 
