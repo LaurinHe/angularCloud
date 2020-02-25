@@ -19,7 +19,7 @@ author: Florian Lang
   </div>
 </div>
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]= "dataSourceStations">
+  <table mat-table [dataSource]= "dataSourceStations" matSort>
     <ng-container matColumnDef="select">
       <!--<th mat-header-cell *matHeaderCellDef>
         <mat-checkbox (change)="$event ? masterToggle() : null"
@@ -27,7 +27,7 @@ author: Florian Lang
                       [indeterminate]="selection.hasValue() && !isAllSelected()">
         </mat-checkbox>
       </th>-->
-      <th mat-header-cell *matHeaderCellDef>Select</th>
+      <th mat-header-cell *matHeaderCellDef >Select</th>
       <td mat-cell *matCellDef="let row">
         <mat-checkbox (click)="$event.stopPropagation()"
                       (change)="$event ? selection.toggle(row) : null"
@@ -37,26 +37,26 @@ author: Florian Lang
     </ng-container>
 
     <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef>Station Id</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Station Id</th>
       <td mat-cell *matCellDef="let station"> {{station.id}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="name" mat-sort-header>
       <th mat-header-cell *matHeaderCellDef>Station Name</th>
       <td mat-cell *matCellDef="let station"> {{station.name}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="latitude">
+    <ng-container matColumnDef="latitude" mat-sort-header>
       <th mat-header-cell *matHeaderCellDef>Latitude</th>
       <td mat-cell *matCellDef="let station"> {{station.latitude}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="longitude">
+    <ng-container matColumnDef="longitude" mat-sort-header>
       <th mat-header-cell *matHeaderCellDef>Longitude</th>
       <td mat-cell *matCellDef="let station"> {{station.longitude}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="elevation">
+    <ng-container matColumnDef="elevation" mat-sort-header>
       <th mat-header-cell *matHeaderCellDef>Elevation</th>
       <td mat-cell *matCellDef="let station"> {{station.elevation}} </td>
     </ng-container>

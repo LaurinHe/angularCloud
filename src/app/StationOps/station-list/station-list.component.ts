@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import {IStation} from '../../Interfaces/IStation';
 import {StationService} from '../../station.service';
 import {ICountry} from '../../Interfaces/ICountry';
-import {MatPaginator, MatTableDataSource} from '@angular/material';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {SelectionModel} from '@angular/cdk/collections';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
@@ -25,25 +25,28 @@ export class StationListComponent implements OnInit {
               private sanitizer: DomSanitizer) {}
   stations: IStation[] = [];
 
-  private downloadJson;
+  downloadJson;
 
   dataSourceStations = new MatTableDataSource<IStation>(this.stations);
 
-  private selectedCountry: ICountry;
+  selectedCountry: ICountry;
 
   displayedColumns: string[] = ['select', 'position', 'name', 'latitude', 'longitude', 'elevation'];
 
   // For selecting row
-  private selection = new SelectionModel<IStation>(false, [this.stations[0]]);
+  selection = new SelectionModel<IStation>(false, [this.stations[0]]);
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+
   private theJSON: string;
   private uri: SafeUrl;
-  private isDownloadable = false;
+  isDownloadable = false;
 
   ngOnInit() {
     this.dataSourceStations.paginator = this.paginator;
+    this.dataSourceStations.sort = this.sort;
   }
 
   getStationsForcountryFromServer() {
@@ -53,6 +56,7 @@ export class StationListComponent implements OnInit {
         this.stations = data;
         this.dataSourceStations = new MatTableDataSource<IStation>(data);
         this.dataSourceStations.paginator = this.paginator;
+        this.dataSourceStations.sort = this.sort;
       });
     console.log('fetched stations for countryid: ' + this.selectedCountry.countryid);
   }

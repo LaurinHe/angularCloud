@@ -18,3 +18,7 @@ stationlistview{
 .mat-column-select {
   overflow: initial;
 }
+
+th.mat-sort-header-sorted {
+  color: black;
+}
