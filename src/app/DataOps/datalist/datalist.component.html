@@ -1,0 +1,77 @@
+<!--
+ author: Florian Lang
+ -->
+
+<p>datalist works!</p>
+<div>
+  <app-selector-country></app-selector-country>
+  <app-selector-station></app-selector-station>
+  <app-datepicker></app-datepicker>
+  <button mat-raised-button color="primary" (click)="getDataFromServer()" matTooltip="Fetches Data from the server">
+    Get Data
+  </button>
+
+
+</div>
+<div>
+  <button id="DownloadJson" mat-raised-button color="primary" (click)="generateDownloadJsonUri()" matTooltip="Gets the Data as Json Document">
+    Generate Json File
+  </button>
+  <div [hidden]="!isDownloadable">
+    <a class="btn btn-clear" title="Download JSON" [href]="downloadJson" download="download.json">get the file</a>
+  </div>
+</div>
+<div  class="mat-elevation-z8">
+  <table mat-table [dataSource]= "dataSourceDailyEntries" matSort>
+    <!--<ng-container matColumnDef="select">
+      &lt;!&ndash;<th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()">
+        </mat-checkbox>
+      </th>&ndash;&gt;
+      <th mat-header-cell *matHeaderCellDef >Select</th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>-->
+
+    <ng-container matColumnDef="date" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Entry Date</th>
+      <td mat-cell *matCellDef="let entry"> {{entry.date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="temperature">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Temperature</th>
+      <td mat-cell *matCellDef="let entry"> {{entry.temperature}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="maxtemp">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Max Temperature</th>
+      <td mat-cell *matCellDef="let entry"> {{entry.maxTemperature}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="mintemp">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Min Temperature</th>
+      <td mat-cell *matCellDef="let entry"> {{entry.minTemperature}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="precipitation">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Precipitation</th>
+      <td mat-cell *matCellDef="let entry"> {{entry.precipitation}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
+
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        (click)="selection.toggle(row)">
+  </table>
+  <mat-paginator [pageSizeOptions]="[50, 100, 200]" showFirstLastButtons></mat-paginator>
+</div>
+
+
+

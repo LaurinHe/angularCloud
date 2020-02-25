@@ -6,33 +6,38 @@ import {ICountry} from '../../Interfaces/ICountry';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {SelectionModel} from '@angular/cdk/collections';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
+import {IDataAll} from '../../Interfaces/IDataAll';
 
 /**
- * Class for viewing the Stations
+ * Class for viewing the Data
  * @author Florian Lang
  */
 @Component({
-  selector: 'app-station-list',
-  templateUrl: './station-list.component.html',
-  styleUrls: ['./station-list.component.css']
+  selector: 'app-datalist',
+  templateUrl: './datalist.component.html',
+  styleUrls: ['./datalist.component.css']
 })
-export class StationListComponent implements OnInit {
+export class DatalistComponent implements OnInit {
 
   constructor(private stationService: StationService,
               private router: Router,
               private sanitizer: DomSanitizer) {}
-  stations: IStation[] = [];
+  givenData: IDataAll[] = [];
 
   downloadJson;
 
-  dataSourceStations = new MatTableDataSource<IStation>(this.stations);
+  dataSourceDailyEntries = new MatTableDataSource<IDataAll>(this.givenData);
 
   selectedCountry: ICountry;
 
-  displayedColumns: string[] = ['select', 'position', 'name', 'latitude', 'longitude', 'elevation'];
+  selectedStation: IStation;
+  selectedMinDate: string;
+  selectedMaxDate: string;
+
+  displayedColumns: string[] = ['date', 'temperature', 'maxtemp', 'mintemp', 'precipitation'];
 
   // For selecting row
-  selection = new SelectionModel<IStation>(false, [this.stations[0]]);
+  selection = new SelectionModel<IDataAll>(false, [this.givenData[0]]);
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
@@ -43,27 +48,49 @@ export class StationListComponent implements OnInit {
   isDownloadable = false;
 
   ngOnInit() {
-    this.dataSourceStations.paginator = this.paginator;
-    this.dataSourceStations.sort = this.sort;
+    this.dataSourceDailyEntries.paginator = this.paginator;
+    this.dataSourceDailyEntries.sort = this.sort;
   }
 
-  getStationsForcountryFromServer() {
+/*  getStationsForcountryFromServer() {
     this.stationService.currentSelCountry.subscribe(data => this.selectedCountry = data);
-    this.stationService.getStations(this.selectedCountry.countryid)
+    this.stationService.getData(this.selectedStation.id, this.)
       .subscribe(data => {
-        this.stations = data;
-        this.dataSourceStations = new MatTableDataSource<IStation>(data);
-        this.dataSourceStations.paginator = this.paginator;
-        this.dataSourceStations.sort = this.sort;
+        this.givenData = data;
+        this.dataSourceDailyEntries = new MatTableDataSource<IStation>(data);
+        this.dataSourceDailyEntries.paginator = this.paginator;
+        this.dataSourceDailyEntries.sort = this.sort;
 
       });
     console.log('fetched stations for countryid: ' + this.selectedCountry.countryid);
+  }*/
+
+  getDataFromServer() {
+    this.stationService.getData('?stationidpassed=' +
+      this.selectedStation.id +
+      '&frompoint=' +
+      this.selectedMinDate +
+      '&topoint=' +
+      this.selectedMaxDate).subscribe(data => {
+      this.givenData = data;
+      this.dataSourceDailyEntries = new MatTableDataSource<IDataAll>(data);
+      this.dataSourceDailyEntries.paginator = this.paginator;
+      this.dataSourceDailyEntries.sort = this.sort;
+    });
+
+
+    console.log('?stationidpassed=' +
+      this.selectedStation.id +
+      '&frompoint=' +
+      this.selectedMinDate +
+      '&topoint=' +
+      this.selectedMaxDate);
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
     const numSelected = this.selection.selected.length;
-    const numRows = this.dataSourceStations.data.length;
+    const numRows = this.dataSourceDailyEntries.data.length;
     // tslint:disable-next-line:triple-equals
     return numSelected == numRows;
   }
@@ -72,7 +99,7 @@ export class StationListComponent implements OnInit {
   masterToggle() {
     this.isAllSelected() ?
       this.selection.clear() :
-      this.dataSourceStations.data.forEach(row => this.selection.select(row));
+      this.dataSourceDailyEntries.data.forEach(row => this.selection.select(row));
   }
 
   edit(stationid: number) {
@@ -80,10 +107,10 @@ export class StationListComponent implements OnInit {
   }
 
   generateDownloadJsonUri() {
-    this.theJSON = JSON.stringify(this.stations);
+    this.theJSON = JSON.stringify(this.givenData);
     this.uri = this.sanitizer.bypassSecurityTrustUrl('data:text/json;charset=UTF-8,' + encodeURIComponent(this.theJSON));
     this.downloadJson = this.uri;
-    console.log('Downloading Data as Json the first station is: ' + this.stations[0].name + ' reachable at ' + this.uri);
+    console.log('Downloading Data as Json the first station is: ' + this.givenData[0].stationid + ' reachable at ' + this.uri);
     this.isDownloadable = true;
   }
 
@@ -98,17 +125,5 @@ export class StationListComponent implements OnInit {
     document.body.removeChild(element);
   }
 
-  /*deleteStation(id: number) {
-    this.stationService.deleteEmployee(id)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.reloadData();
-        },
-        error => console.log(error));
-  }*/
-
-  /*stationDetails(id: number) {
-    this.router.navigate(['details', id]);
-  }*/
 }
+

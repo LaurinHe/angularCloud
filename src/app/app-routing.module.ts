@@ -10,6 +10,8 @@ import {FormularComponent} from './formular/formular.component';
 import { UserManagComponent } from './user-manag/user-manag.component';
 import {StationListComponent} from './StationOps/station-list/station-list.component';
 import {StationCreateComponent} from './StationOps/station-create/station-create.component';
+import {DatacreateComponent} from './DataOps/datacreate/datacreate.component';
+import {DatalistComponent} from './DataOps/datalist/datalist.component';
 
 const routes: Routes = [
   {
@@ -43,6 +45,10 @@ const routes: Routes = [
   {
     path: 'create-station',
     component: StationCreateComponent
+  },
+  {
+    path: 'datalist',
+    component: DatalistComponent
   },
   {
     path: '',

@@ -52,6 +52,8 @@ import { UserManagComponent } from './user-manag/user-manag.component';
 
 import {StationListComponent} from './StationOps/station-list/station-list.component';
 import {StationCreateComponent} from './StationOps/station-create/station-create.component';
+import { DatalistComponent } from './DataOps/datalist/datalist.component';
+import { DatacreateComponent } from './DataOps/datacreate/datacreate.component';
 
 
 @NgModule({
@@ -75,6 +77,8 @@ import {StationCreateComponent} from './StationOps/station-create/station-create
     UserManagComponent,
     StationCreateComponent,
     StationListComponent,
+    DatalistComponent,
+    DatacreateComponent,
   ],
     imports: [
         BrowserModule,
