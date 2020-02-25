@@ -42,6 +42,8 @@ export class MyChartComponent implements OnInit {
 
   public myChartLegend = true;
 
+
+
   public myChartType = 'bar';
 
   getDataFromServer() {
@@ -88,11 +90,14 @@ export class MyChartComponent implements OnInit {
       this.myChartLabels.push(this.givenData[i].date);
 
       this.myTempSet.push(this.givenData[i].temperature);
-      this.myPrecSet.push(this.givenData[i].precipitation);
+
+      if (this.givenData[i].precipitation !== 99.99){
+        this.myPrecSet.push(this.givenData[i].precipitation);
+      }
       this.myWindSet.push(this.givenData[i].windSpeed);
       this.myMinTemp.push(this.givenData[i].minTemperature);
       this.myMaxTemp.push(this.givenData[i].maxTemperature);
-      this.myStatPres.push(this.givenData[i].stationPressure);
+      this.myStatPres.push(this.givenData[i].stationPressure / 100);
     }
 
   }

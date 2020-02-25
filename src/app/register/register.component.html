@@ -42,13 +42,19 @@
 
       <div class="form-group">
         <mat-form-field id="small1">
-          <input matInput placeholder="Where was your Mother born?"/>
+          <input matInput placeholder="Where was your Mother born?" class="form-control" name="secretanswerone" [(ngModel)]="form.secretanswerone" #secretanswerone="ngModel" required/>
+          <mat-error *ngIf="f.submitted && secretanswerone.errors.required">
+            Answer is required
+          </mat-error>
         </mat-form-field>
       </div>
 
       <div class="form-group">
         <mat-form-field id="small2">
-          <input matInput placeholder="What is your favourite Movie?"/>
+          <input matInput placeholder="What is your favourite Movie?" class="form-control" name="secretanswertwo" [(ngModel)]="form.secretanswertwo" #secretanswertwo="ngModel" required/>
+          <mat-error *ngIf="f.submitted && secretanswertwo.errors.required">
+            Answer is required
+          </mat-error>
         </mat-form-field>
       </div>
 

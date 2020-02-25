@@ -1,3 +1,6 @@
 mat-toolbar {
   border-radius: 5px;
 }
+mat-toolbar {
+  height: 40px
+}
