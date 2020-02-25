@@ -31,8 +31,8 @@ export class ResetService {
     return this.http.get(this.baseUrlUM + '/setcurator'); // get to set
   }
 
-  resetpassword(): Observable<any> {
-    return this.http.get(this.baseUrlUM + '/resetpassword'); // get to set
+  resetpassword(info: ResetPwInfo): Observable<string> {
+    return this.http.post<string>(this.baseUrlUM + '/resetpassword', info, httpOptions); // get to set
   }
 
 

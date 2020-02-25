@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ResetPwInfo } from '../auth/resetpw-info';
+import { ResetService } from '../reset.service';
 
 @Component({
   selector: 'app-formular',
@@ -7,9 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularComponent implements OnInit {
 
-  constructor() { }
+  form: any = {};
+  resetPwInfo: ResetPwInfo;
+  errorMessage = '';
 
-  ngOnInit() {
+
+
+
+  constructor(private resetService: ResetService) { }
+
+  ngOnInit() { }
+
+  onSubmit() {
+    console.log(this.form);
+
+    this.resetPwInfo = new ResetPwInfo(
+      this.form.username,
+      this.form.newpassword,
+      this.form.secretanswerone,
+      this.form.secretanswertwo);
+
+    this.resetService.resetpassword(this.resetPwInfo).subscribe(
+      data => {
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+        this.errorMessage = error.error.message;
+      }
+    );
   }
-
 }
