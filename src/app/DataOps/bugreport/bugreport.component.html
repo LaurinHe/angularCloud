@@ -1,17 +1,22 @@
+<!--
+author: Florian Lang & Laurin Hecken
+-->
+<mat-card>
+  <h3 mat-card-title>Bug Report</h3>
+  <form class="example-form" [formGroup]="bugForm" (ngSubmit)="onSubmit(bugForm.value)">
+    <mat-form-field class="example-full-width">
+      <mat-label>Bug Name</mat-label>
+      <input matInput placeholder="Get Request Bug">
+      <mat-error *ngIf="bugFormControl.hasError('required')">
+        Bug Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
 
-<form class="example-form" [formGroup]="bugForm" (ngSubmit)="onSubmit(bugForm.value)">
-  <mat-form-field class="example-full-width">
-    <mat-label>Bug Name</mat-label>
-    <input matInput placeholder="Get Request Bug">
-    <mat-error *ngIf="bugFormControl.hasError('required')">
-      Bug Name is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Leave a comment on the Bug</mat-label>
+      <textarea matInput placeholder="Ex. Request xyz not working"></textarea>
+    </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Leave a comment on the Bug</mat-label>
-    <textarea matInput placeholder="Ex. Request xyz not working"></textarea>
-  </mat-form-field>
-
-  <button class="button" type="submit">Submit Bug</button>
-</form>
+    <button mat-raised-button color="accent" class="button" type="submit">Submit Bug</button>
+  </form>
+</mat-card>
