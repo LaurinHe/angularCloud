@@ -8,8 +8,13 @@ author: Laurin Hecken
 
   <mat-menu #rootMenu="matMenu">
     <button mat-menu-item routerLink="home">
-      <mat-icon>home</mat-icon>
-      <span>Home</span>
+      <mat-icon>bar_chart</mat-icon>
+      <span>Graph</span>
+    </button>
+
+    <button mat-menu-item routerLink="climatediag">
+      <mat-icon>show_chart</mat-icon>
+      <span>Climate Diagram</span>
     </button>
 
     <button mat-menu-item routerLink="auth/login">
@@ -22,22 +27,17 @@ author: Laurin Hecken
       <span>User Management</span>
     </button>
 
-   <button mat-menu-item [mat-menu-trigger-for]="stationMenu">Stations</button>
+   <button mat-menu-item [mat-menu-trigger-for]="stationMenu">
+     <mat-icon>center_focus</mat-icon>
+     <span>Stations</span>
+   </button>
 
-    <button mat-menu-item routerLink="datalist">
+    <button mat-menu-item [mat-menu-trigger-for]="dataMenu">
       <mat-icon></mat-icon>
-      <span>data List</span>
+      <span>Data</span>
     </button>
 
-    <button mat-menu-item routerLink="datacreate">
-      <mat-icon></mat-icon>
-      <span>Create Data</span>
-    </button>
 
-    <button mat-menu-item routerLink="climatediag">
-      <mat-icon></mat-icon>
-      <span>Climate Diagram</span>
-    </button>
 
     <button mat-menu-item routerLink="info">
       <mat-icon>info</mat-icon>
@@ -48,13 +48,25 @@ author: Laurin Hecken
 
   <mat-menu #stationMenu="matMenu">
     <button mat-menu-item routerLink="stations">
-      <mat-icon>place</mat-icon>
+      <mat-icon>list</mat-icon>
       <span>Station List</span>
     </button>
 
     <button mat-menu-item routerLink="create-station">
-      <mat-icon></mat-icon>
+      <mat-icon>publish</mat-icon>
       <span>Create Stations</span>
+    </button>
+  </mat-menu>
+
+  <mat-menu #dataMenu="matMenu">
+    <button mat-menu-item routerLink="datalist">
+      <mat-icon>list</mat-icon>
+      <span>Data List</span>
+    </button>
+
+    <button mat-menu-item routerLink="datacreate">
+      <mat-icon>publish</mat-icon>
+      <span>Create Data</span>
     </button>
   </mat-menu>
 
