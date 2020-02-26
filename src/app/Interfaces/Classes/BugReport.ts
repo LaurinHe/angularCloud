@@ -1,4 +1,8 @@
-export class BugReport{
+/**
+ * Class for storing the form for the bugreport
+ * @author Florian Lang
+ */
+export class BugReport {
   bugname: string;
   bugcontent: string;
 

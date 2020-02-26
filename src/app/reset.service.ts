@@ -29,16 +29,16 @@ export class ResetService {
 
   setCurator(username: string): Observable<any> {
 
-    const params = new HttpParams()
-      .set('username', username);
+/*    const params = new HttpParams()
+      .set('username', username);*/
 
-    return this.http.put(this.baseUrlUM + '/setcurator', null, {params} ); // get to set
+    return this.http.put(this.baseUrlUM + '/setcurator?username=' + username, httpOptions); // get to set
   }
 
   unsetCurator(username: string): Observable<any> {
-    const params = new HttpParams()
-      .set('username', username);
-    return this.http.put(this.baseUrlUM + '/unsetcurator', null, {params}); // get to set
+   /* const params = new HttpParams()
+      .set('username', username);*/
+    return this.http.put(this.baseUrlUM + '/unsetcurator?username=' + username, httpOptions); // get to set
   }
 
   resetpassword(info: ResetPwInfo): Observable<string> {

@@ -98,17 +98,4 @@ export class StationListComponent implements OnInit {
     document.body.removeChild(element);
   }
 
-  /*deleteStation(id: number) {
-    this.stationService.deleteEmployee(id)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.reloadData();
-        },
-        error => console.log(error));
-  }*/
-
-  /*stationDetails(id: number) {
-    this.router.navigate(['details', id]);
-  }*/
 }

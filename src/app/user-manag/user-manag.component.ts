@@ -31,4 +31,11 @@ export class UserManagComponent implements OnInit {
 
   }
 
+  curatorButtonHandler(username: string) {
+    this.userService.setCurator(username)
+      .subscribe();
+    window.location.reload();
+
+  }
+
 }

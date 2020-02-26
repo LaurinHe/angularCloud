@@ -43,7 +43,7 @@ export class DataService {
   }
 
   postBugReport(bugreport: BugReport): Observable<any> {
-    return this.http.post(this.baseUrl + '/api/bugreport/reportbug', bugreport);
+    return this.http.post(this.baseUrl + 'api/bugreport/reportbug', bugreport);
   }
 
 
