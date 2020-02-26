@@ -30,9 +30,7 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  createStation(station: IStation): Observable<any> {
-    return this.http.post(`${this.baseUrl + 'api/contstat/stations'}`, station);
-  }
+
 
   postDataEntry(newentry: IDataAll): Observable<any> {
     return this.http.put(this.baseUrl + 'api/data/putdataentry', newentry);

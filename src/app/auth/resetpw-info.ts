@@ -1,3 +1,7 @@
+/**
+ * Class which includes the information for resetting the password
+ * @author Laurin Hecken
+ */
 export class ResetPwInfo {
   username: string;
   newpassword: string;

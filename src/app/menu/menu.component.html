@@ -52,7 +52,7 @@ author: Laurin Hecken
       <span>Station List</span>
     </button>
 
-    <button mat-menu-item routerLink="create-station">
+    <button mat-menu-item routerLink="create-station" *ngIf="roles.length!==1">
       <mat-icon>publish</mat-icon>
       <span>Create Stations</span>
     </button>
@@ -64,7 +64,7 @@ author: Laurin Hecken
       <span>Data List</span>
     </button>
 
-    <button mat-menu-item routerLink="datacreate">
+    <button mat-menu-item routerLink="datacreate" *ngIf="roles.length!==1">
       <mat-icon>publish</mat-icon>
       <span>Create Data</span>
     </button>

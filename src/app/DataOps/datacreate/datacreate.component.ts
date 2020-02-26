@@ -12,7 +12,7 @@ import {DataService} from '../../data.service';
 
 /**
  * Component to Create a data entry
- * @author Florian Lang
+ * @author Florian Lang & Laurin Hecken
  */
 @Component({
   selector: 'app-datacreate',

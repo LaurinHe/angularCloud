@@ -1,3 +1,7 @@
+/**
+ * Class which includes the information for the sign up
+ * @author Florian Lang
+ */
 export class SignUpInfo {
   name: string;
   username: string;

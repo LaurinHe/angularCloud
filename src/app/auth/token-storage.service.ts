@@ -4,6 +4,10 @@ const TOKEN_KEY = 'AuthToken';
 const USERNAME_KEY = 'AuthUsername';
 const AUTHORITIES_KEY = 'AuthAuthorities';
 
+/**
+ *
+ * @author Florian Lang
+ */
 @Injectable({
   providedIn: 'root'
 })

@@ -11,6 +11,10 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+/**
+ * Service for the authentication
+ * @author Florian Lang & Laurin Hecken
+ */
 @Injectable({
   providedIn: 'root'
 })

@@ -6,6 +6,10 @@ import {Observable, BehaviorSubject} from 'rxjs';
 import {IDataAll} from './Interfaces/IDataAll';
 import {AppSettings} from './AppSettings';
 
+/**
+ * Service for
+ * @author Laurin Hecken & Florian Lang
+ */
 @Injectable({
   providedIn: 'root'
 })
