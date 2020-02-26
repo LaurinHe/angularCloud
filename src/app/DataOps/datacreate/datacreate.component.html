@@ -6,7 +6,7 @@
 <form id="dataFormId" [formGroup]="dataForm" (ngSubmit)="onSubmit(dataForm.value)">
 
 <!--<div class="form-group" (ngSubmit)="onSubmit(dataForm.value)">-->
-  <div class="dailyDataInput">
+
   <mat-form-field>
   <label for="temperature">Temperature</label>
   <input id="temperature" class="form-control"
@@ -23,9 +23,9 @@
       </div>
     </div>
   </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
   <mat-form-field>
     <label for="tempAttr">Temperature Attribute</label>
     <input id="tempAttr" class="form-control"
@@ -42,9 +42,9 @@
       </div>
     </div>
   </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
   <mat-form-field>
       <label for="dewpoint">Dewpoint</label>
       <input id="dewpoint" class="form-control"
@@ -61,9 +61,9 @@
         </div>
       </div>
   </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
   <mat-form-field>
     <label for="dewAttr">Dewpoint Attribute</label>
     <input id="dewAttr" class="form-control"
@@ -80,9 +80,9 @@
       </div>
     </div>
   </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
   <mat-form-field>
     <label for="seaLevelPressure">Sea Level Pressure</label>
     <input id="seaLevelPressure" class="form-control"
@@ -99,9 +99,9 @@
       </div>
     </div>
   </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="slpAttr">Sea Level Pressure Attr</label>
       <input id="slpAttr" class="form-control"
@@ -118,9 +118,9 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
   <mat-form-field>
     <label for="stationPressure">station Pressure</label>
     <input id="stationPressure" class="form-control"
@@ -137,9 +137,9 @@
       </div>
     </div>
   </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="stpAttr">stp Attr</label>
       <input id="stpAttr" class="form-control"
@@ -154,9 +154,9 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="visibility">visibility</label>
       <input id="visibility" class="form-control"
@@ -173,9 +173,9 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="visibAttr">visibility Attr</label>
       <input id="visibAttr" class="form-control"
@@ -192,9 +192,9 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="windSpeed">Wind Speed</label>
       <input id="windSpeed" class="form-control"
@@ -211,9 +211,9 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="wdspAtr">Windspeed Attribute</label>
       <input id="wdspAtr" class="form-control"
@@ -230,9 +230,9 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="maxWindSpeed">max Windspeed</label>
       <input id="maxWindSpeed" class="form-control"
@@ -249,9 +249,9 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="gust">gust</label>
       <input id="gust" class="form-control"
@@ -268,9 +268,9 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="maxTemperature">max Temperature</label>
       <input id="maxTemperature" class="form-control"
@@ -287,10 +287,10 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
-      <label for="maxAttr">max Temperature Attribute</label>
+      <label for="maxAttr">max Temp. Attribute</label>
       <input id="maxAttr" class="form-control"
              formControlName="maxAttr" matInput required >
 
@@ -303,9 +303,9 @@
 
       </div>
     </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="minTemperature">min Temperature</label>
       <input id="minTemperature" class="form-control"
@@ -322,11 +322,11 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
   <mat-form-field>
-    <label for="minAttr">min Temperature Attribute</label>
+    <label for="minAttr">min Temp. Attribute</label>
     <input id="minAttr" class="form-control"
            formControlName="minAttr" matInput required >
 
@@ -339,9 +339,9 @@
 
     </div>
   </mat-form-field>
-</div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="precipitation">Precipitation</label>
       <input id="precipitation" class="form-control"
@@ -358,9 +358,9 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="prcpAttr">Precipitation Attribute</label>
       <input id="prcpAttr" class="form-control"
@@ -374,9 +374,9 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="snowDepth">Snow Depth</label>
       <input id="snowDepth" class="form-control"
@@ -393,9 +393,9 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
 
-  <div class="dailyDataInput">
+
+
     <mat-form-field>
       <label for="frshtt">frshtt</label>
       <input id="frshtt" class="form-control"
@@ -412,8 +412,12 @@
         </div>
       </div>
     </mat-form-field>
-  </div>
 
-  <button mat-raised-button color="primary" class="button" type="submit">Submit</button>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" class="button" type="submit">Submit</button>
+  </mat-card-actions>
+
+
 </form>
 </mat-card>

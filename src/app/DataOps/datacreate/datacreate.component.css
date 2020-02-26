@@ -1,11 +1,14 @@
 #dataFormId{
-  margin-top: 65px;
+  margin-top: 10px;
 }
 
 dailyDataInput{
-  margin: 5%;
+  margin: 5px;
 }
 
-mat-form-field, div {
-  display: flex;
+mat-form-field {
+  margin: 5px;
+  width: 150px;
+  height: 70px;
+  font-size: small;
 }
