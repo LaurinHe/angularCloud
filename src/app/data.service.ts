@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {IStation} from './Interfaces/IStation';
 import {ICountry} from './Interfaces/ICountry';
 import {Observable, BehaviorSubject} from 'rxjs';
@@ -37,7 +37,9 @@ export class DataService {
   }
 
   getClimateDiagEntry(stationid: number, year: number ): Observable<IClimateDiagEntry[]> {
-    return this.http.get<IClimateDiagEntry[]>(this.baseUrl + 'api/climatediag/getdatayearly');
+ /*   const params = new HttpParams()
+      .set('stationid', String(stationid)).set('year', String(year));*/
+    return this.http.get<IClimateDiagEntry[]>(this.baseUrl + 'api/climatediag/getdatayearly?stationid=' + stationid + '&year=' + year);
   }
 
   postBugReport(bugreport: BugReport): Observable<any> {

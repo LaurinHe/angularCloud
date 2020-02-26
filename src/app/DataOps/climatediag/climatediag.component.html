@@ -4,10 +4,33 @@
   <app-selector-station></app-selector-station>
   <mat-form-field>
     <mat-label>Select the year</mat-label>
-    <mat-select>
+    <mat-select [(ngModel)]="selectedYear">
       <mat-option *ngFor="let year of years" [value]="year">
         {{year}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 </mat-card>
+<button mat-raised-button color="accent" (click)="getDataFromServer()" matTooltip="Fetches the data from the server">
+  Get the Data
+</button>
+
+<!--<mat-card>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <canvas id="myChart" class="chartjs" width="770" height="385" style="display: block; width: 770px; height: 385px;"></canvas>
+
+</mat-card>-->
+<button mat-raised-button color="accent" (click)="buttonHandler()" matTooltip="Click to show or update the graph">
+  Show the graph
+</button>
+<div>
+  <div id="climateDiag" style="display: block">
+    <canvas id="theChart" baseChart  height="50" width="100"
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+    </canvas>
+  </div>
+</div>
