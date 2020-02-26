@@ -1,3 +1,7 @@
+/**
+ * Interface for a station
+ * @author Laurin Hecken
+ */
 export interface IStation {
   id: number;
   name: string;

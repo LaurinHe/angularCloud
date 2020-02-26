@@ -4,10 +4,11 @@
   <app-selector-station></app-selector-station>
   <mat-form-field>
     <mat-label>Select the year</mat-label>
-    <mat-select>
+    <mat-select [(ngModel)]="selectedYear">
       <mat-option *ngFor="let year of years" [value]="year">
         {{year}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 </mat-card>
+<p>{{selectedYear}}</p>

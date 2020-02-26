@@ -53,7 +53,12 @@ author: Laurin Hecken
       <div class="form-group">
         <button mat-raised-button color="accent" class="btn btn-primary">Reset Password</button>
       </div>
-
+      <mat-card-content *ngIf="myError">
+        <span>
+          <mat-icon color="primary">done</mat-icon>
+          <span>Success</span>
+        </span>
+      </mat-card-content>
     </form>
   </div>
 

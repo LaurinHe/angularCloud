@@ -24,6 +24,10 @@ export class SelectorStationComponent implements OnInit {
 
   constructor(private stationService: StationService) { }
 
+  /**
+   * this component needs to know which country was selected
+   * @author Laurin Hecken
+   */
   ngOnInit() {
     this.stationService.currentSelCountry.subscribe(data => this.selectedCountry = data);
   }

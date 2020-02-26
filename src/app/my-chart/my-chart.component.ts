@@ -50,6 +50,10 @@ export class MyChartComponent implements OnInit {
 
   public myChartType = 'bar';
 
+  /**
+   * Creates the url with the parameters and subscribes to the stationService to get the data
+   * @author Laurin Hecken
+   */
   getDataFromServer() {
     this.stationService.getData('?stationidpassed=' +
       this.selectedStation.id +
@@ -66,6 +70,11 @@ export class MyChartComponent implements OnInit {
     this.buttonHandler();
   }
 
+  /**
+   * First all arrays are emptied. Then they are filled with the new data, which was fetched from the server
+   * The data is converted to the metric system
+   * @author Laurin Hecken
+   */
   buttonHandler() {
 
     while (this.myChartLabels.length > 0) {
@@ -110,6 +119,11 @@ export class MyChartComponent implements OnInit {
 
   constructor(private stationService: StationService) { }
 
+
+  /**
+   * This component needs to know which Station, minDate & maxDate was selected
+   * @author Laurin Hecken
+   */
   ngOnInit() {
     // this.stationService.getFakeData('FakeData.json').subscribe(data => this.givenData = data);
 

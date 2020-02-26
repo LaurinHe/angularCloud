@@ -26,6 +26,11 @@ export class DatepickerComponent implements OnInit {
   date1String = '';
   date2String = '';
 
+  /**
+   * gets the event from the datepicker
+   * converts the event to the string format that is needed
+   * @author Laurin Hecken
+   */
   changeDateHandler1(event: MatDatepickerInputEvent<Date>) {
     this.date1String = '';
     this.date1String = this.date1String + event.value.getFullYear().toString() + '-';

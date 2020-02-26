@@ -20,6 +20,10 @@ export class SelectorCountryComponent implements OnInit {
 
   constructor(private stationService: StationService) { }
 
+  /**
+   * subscribes to the stationService to fetch all the available countries
+   * @author Laurin Hecken
+   */
   ngOnInit() {
     this.stationService.getCountries()
       .subscribe(data => this.countries = data);
@@ -27,6 +31,10 @@ export class SelectorCountryComponent implements OnInit {
     this.stationService.currentSelCountry.subscribe(data => this.selectedCountry = data);
   }
 
+  /**
+   * sets the selected country via the service
+   * @author Laurin Hecken
+   */
   changeSelectedCountry(givenCountry: ICountry) {
     this.stationService.changeCountry(givenCountry);
   }
