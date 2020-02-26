@@ -3,6 +3,8 @@ import {FormControl, Validators} from '@angular/forms';
 import {IStation} from '../../Interfaces/IStation';
 import {DataService} from '../../data.service';
 import {BugReport} from '../../Interfaces/Classes/BugReport';
+import {Router} from '@angular/router';
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-bugreport',
@@ -12,7 +14,8 @@ import {BugReport} from '../../Interfaces/Classes/BugReport';
 export class BugreportComponent implements OnInit {
 
   constructor(private dataService: DataService,
-              private router: Router) {
+              private router: Router,
+              private formBuilder: FormBuilder) {
 
     this.bugForm = this.formBuilder.group({
       bugname: '',
@@ -37,7 +40,7 @@ export class BugreportComponent implements OnInit {
     // this.station = new IStation();
     console.log('Bug Report has been submitted');
 
-    this.stationForm.reset();
+    this.bugForm.reset();
     this.gotoList();
   }
 
