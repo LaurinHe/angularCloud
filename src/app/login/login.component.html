@@ -3,8 +3,6 @@ author: Laurin Hecken & Florian Lang
 -->
 <mat-card>
 <div *ngIf="isLoggedIn; else loggedOut">
-  Logged in as {{roles}}.
-  <a routerLink="/home" routerLinkActive="active">Vis</a>
 </div>
 
 <ng-template #loggedOut>
@@ -40,7 +38,7 @@ author: Laurin Hecken & Florian Lang
         <button mat-raised-button color="warn" routerLink="/reset-password"><small>Forgot your Password?</small></button>
         <mat-card-content *ngIf="f.submitted && isLoginFailed">
           <mat-icon color="warn">warning</mat-icon>
-          <span><strong>Login failed: {{errorMessage}}</strong></span>
+          <span><strong>Login failed!</strong></span>
         </mat-card-content>
       </div>
     </form>

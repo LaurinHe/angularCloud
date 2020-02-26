@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getAuthorities();
-      this.snackbar.open('Your login was successful', '', {duration: 3000});
       this.router.navigate(['/home']); /******************************/
+      this.snackbar.open('You are logged in', '', {duration: 3000});
     }
   }
 

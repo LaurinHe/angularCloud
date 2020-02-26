@@ -2,7 +2,7 @@
 author: Laurin Hecken
 -->
 <mat-toolbar color="primary">
-  <button mat-icon-button [matMenuTriggerFor]="rootMenu">
+  <button mat-icon-button [matMenuTriggerFor]="rootMenu" (click)="buttonHandler()">
     <mat-icon>more_vert</mat-icon>
   </button>
 
@@ -17,28 +17,16 @@ author: Laurin Hecken
       <span>Log In</span>
     </button>
 
-    <button mat-menu-item routerLink="user-management">
+    <button mat-menu-item routerLink="user-management" *ngIf="roles.length!==1">
       <mat-icon>people</mat-icon>
       <span>User Management</span>
     </button>
 
-    <button mat-menu-item [matMenuTriggerFor]="infoMenu">
+    <button mat-menu-item routerLink="info">
       <mat-icon>info</mat-icon>
-      <span>Info</span>
+      <span>Info about the data</span>
     </button>
 
-  </mat-menu>
-
-  <mat-menu #infoMenu="matMenu">
-    <button mat-menu-item  routerLink="info">
-      <mat-icon>cloud_upload</mat-icon>
-      <span>Info about our data</span>
-    </button>
-
-    <button mat-menu-item>
-      <mat-icon>emoji_people</mat-icon>
-      <span>Info about us</span>
-    </button>
   </mat-menu>
 
   <div class="mat-form-field-flex"></div>

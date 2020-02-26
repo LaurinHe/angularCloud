@@ -93,15 +93,15 @@ export class MyChartComponent implements OnInit {
     for (let i = 0; i < this.givenData.length; i++) {
       this.myChartLabels.push(this.givenData[i].date);
 
-      this.myTempSet.push((this.givenData[i].temperature - 32) * (5 / 9));
+      this.myTempSet.push(Number(((this.givenData[i].temperature - 32) * (5 / 9)).toFixed(2)));
 
       if (this.givenData[i].precipitation !== 99.99) {
-        this.myPrecSet.push(this.givenData[i].precipitation * 2.54);
+        this.myPrecSet.push(Number((this.givenData[i].precipitation * 2.54).toFixed(2)));
       }
-      this.myWindSet.push(this.givenData[i].windSpeed * 0.51444);
-      this.myMinTemp.push((this.givenData[i].minTemperature - 32) * (5 / 9));
-      this.myMaxTemp.push((this.givenData[i].maxTemperature - 32) * (5 / 9));
-      this.myStatPres.push(this.givenData[i].stationPressure / 1000);
+      this.myWindSet.push(Number((this.givenData[i].windSpeed * 0.51444).toFixed(2)));
+      this.myMinTemp.push(Number(((this.givenData[i].minTemperature - 32) * (5 / 9)).toFixed(2)));
+      this.myMaxTemp.push(Number(((this.givenData[i].maxTemperature - 32) * (5 / 9)).toFixed(2)));
+      this.myStatPres.push(Number((this.givenData[i].stationPressure / 1000).toFixed(2)));
     }
 
   }
