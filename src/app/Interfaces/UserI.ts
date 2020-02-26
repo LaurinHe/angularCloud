@@ -1,3 +1,7 @@
+/**
+ * Interface for an user
+ * @author Laurin Hecken
+ */
 export interface IUser {
   id: number;
   name: string;

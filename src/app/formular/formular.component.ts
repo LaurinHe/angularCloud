@@ -15,7 +15,7 @@ export class FormularComponent implements OnInit {
 
   form: any = {};
   resetPwInfo: ResetPwInfo;
-  errorMessage = '';
+  myError: string;
 
 
 
@@ -24,6 +24,11 @@ export class FormularComponent implements OnInit {
 
   ngOnInit() { }
 
+  /**
+   * the resetService is subscribed
+   * the user is informed if his password reset was successful
+   * @author Laurin Hecken
+   */
   onSubmit() {
     console.log(this.form);
 
@@ -39,7 +44,7 @@ export class FormularComponent implements OnInit {
       },
       error => {
         console.log(error);
-        this.errorMessage = error.error.message;
+        this.myError = error.error.text;
       }
     );
   }

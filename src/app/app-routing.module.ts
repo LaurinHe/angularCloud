@@ -13,6 +13,7 @@ import {StationCreateComponent} from './StationOps/station-create/station-create
 import {DatacreateComponent} from './DataOps/datacreate/datacreate.component';
 import {DatalistComponent} from './DataOps/datalist/datalist.component';
 import {ClimatediagComponent} from './DataOps/climatediag/climatediag.component';
+import {BugreportComponent} from './DataOps/bugreport/bugreport.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,10 @@ const routes: Routes = [
   {
     path: 'climatediag',
     component: ClimatediagComponent
+  },
+  {
+    path: 'bug-report',
+    component: BugreportComponent
   },
   {
     path: '',

@@ -41,7 +41,6 @@ export class BugreportComponent implements OnInit {
     console.log('Bug Report has been submitted');
 
     this.bugForm.reset();
-    this.gotoList();
   }
 
   gotoList() {

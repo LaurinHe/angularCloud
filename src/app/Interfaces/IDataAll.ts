@@ -1,3 +1,7 @@
+/**
+ * Interface for the data, which is received from the server
+ * @author Laurin Hecken
+ */
 import {Timestamp} from 'rxjs';
 
 export interface IDataAll {

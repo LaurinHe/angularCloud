@@ -6,9 +6,6 @@ author: Florian Lang
 <button mat-raised-button color="primary" (click)="getStationsForcountryFromServer()" matTooltip="Fetches your Stations from the server">
   Fetch Stations
 </button>
-  <button id="EditStation" mat-raised-button color="primary" (click)="edit(selection.selected.pop().id)" matTooltip="Edit the Selected Station">
-    Edit Selected Station
-  </button>
 </div>
 <div>
   <button id="DownloadJson" mat-raised-button color="primary" (click)="generateDownloadJsonUri()" matTooltip="Gets the Data as Json Document">
