@@ -71,7 +71,7 @@ export class MyChartComponent implements OnInit {
   }
 
   /**
-   * First all arrays are emptied. Then they are filled with the new data, which was fetched from the server
+   * First all data arrays are emptied. Then they are filled with the new data, which was fetched from the server
    * The data is converted to the metric system
    * @author Laurin Hecken
    */
