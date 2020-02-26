@@ -65,7 +65,31 @@ export class ClimatediagComponent implements OnInit {
     this.myPrecSet = [];*/
 
     this.dataService.getClimateDiagEntry(this.selectedStation.id, this.selectedYear)
-      .subscribe(data => this.givenData = data);
+      .subscribe(data => {
+        this.givenData = data;
+
+        while (this.myPrecSet.length > 0) {
+          this.myPrecSet.pop();
+        }
+        while (this.myTempAvgSet.length > 0) {
+          this.myTempAvgSet.pop();
+        }
+
+        for (let i = 0; i < this.givenData.length; i++) {
+          // this.myChartLabels.push(this.givenData[i].date);
+          this.myTempAvgSet.push(Number(((this.givenData[i].temperatureavg - 32) * (5 / 9)).toFixed(2)));
+
+          if (this.givenData[i].precipitation !== 99.99) {
+            this.myPrecSet.push(Number((this.givenData[i].precipitation * 2.54).toFixed(2)));
+          }
+        }
+
+        this.barChartData = [
+          {data: this.myTempAvgSet, type: 'line', label: 'Temperature avg (°C)'},
+          {data: this.myPrecSet, label: 'Precipitation (mm)'}
+        ];
+
+      });
     console.log('fetching data for station: ' + this.selectedStation.name + ' and year: ' + this.selectedYear);
     // this.buttonHandler();
   }
@@ -73,12 +97,13 @@ export class ClimatediagComponent implements OnInit {
 
   buttonHandler() {
 
-  /*  while (this.myPrecSet.length > 0) {
+    /*while (this.myPrecSet.length > 0) {
       this.myPrecSet.pop();
     }
     while (this.myTempAvgSet.length > 0) {
       this.myTempAvgSet.pop();
     }*/
+
      for (let i = 0; i < this.givenData.length; i++) {
       // this.myChartLabels.push(this.givenData[i].date);
       this.myTempAvgSet.push(Number(((this.givenData[i].temperatureavg - 32) * (5 / 9)).toFixed(2)));
