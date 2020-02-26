@@ -1,6 +1,6 @@
 
 /**
- * Class for storing constants that are appwide
+ * Class for storing constants that are appwide version 1.0.0
  * @author Florian Lang
  */
 export class AppSettings {
