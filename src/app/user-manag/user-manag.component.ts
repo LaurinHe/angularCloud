@@ -27,7 +27,7 @@ export class UserManagComponent implements OnInit {
   deleteButtonHandler(username: string) {
     this.userService.deleteUser(username)
       .subscribe();
-    window.location.reload();
+    // window.location.reload();
 
   }
 
