@@ -19,3 +19,7 @@ stationlistview{
 th.mat-sort-header-sorted {
   color: black;
 }
+
+button {
+  margin: 5px;
+}

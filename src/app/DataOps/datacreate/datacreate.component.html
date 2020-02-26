@@ -1,7 +1,17 @@
+<!--
+author: Florian Lang & Laurin Hecken
+-->
 <mat-card>
 <h3>Create a Daily Data Entry</h3>
 <app-selector-country></app-selector-country>
 <app-selector-station></app-selector-station>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="myDatePicker" (dateChange)="changeDateHandler($event)"
+           placeholder="Choose a date" required>
+    <mat-datepicker-toggle matSuffix [for]="myDatePicker" ></mat-datepicker-toggle>
+    <mat-datepicker #myDatePicker></mat-datepicker>
+  </mat-form-field>
 
 <form id="dataFormId" [formGroup]="dataForm" (ngSubmit)="onSubmit(dataForm.value)">
 

@@ -6,7 +6,7 @@ import {IStation} from '../../Interfaces/IStation';
 import {ICountry} from '../../Interfaces/ICountry';
 import {StationService} from '../../station.service';
 import {Router} from '@angular/router';
-import {MatInputModule} from '@angular/material';
+import {MatDatepickerInputEvent, MatInputModule} from '@angular/material';
 import {DataService} from '../../data.service';
 
 
@@ -30,7 +30,10 @@ export class DatacreateComponent implements OnInit {
   numberPatternDouble = '^[0-9]+\.[0-9]+$|^[0-9]+$';
   numberPatternInt = '^[0-9]+$';
 
+  date1String = '';
+
   dataForm;
+  // @ts-ignore
   dataEntry: IDataAll = new DataAll(0, '', 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, '',
     0, '', 0, '', 0, 0);
@@ -70,10 +73,25 @@ export class DatacreateComponent implements OnInit {
 
   }
 
+
+
+  changeDateHandler(event: MatDatepickerInputEvent<Date>) {
+    this.date1String = '';
+    this.date1String = this.date1String + event.value.getFullYear().toString() + '-';
+    if (event.value.getMonth() < 9) {
+      this.date1String = this.date1String + '0';
+    }
+    this.date1String = this.date1String + (event.value.getMonth() + 1).toString() + '-';
+    if (event.value.getDate() < 10) {
+      this.date1String = this.date1String + '0';
+    }
+    this.date1String = this.date1String + event.value.getDate().toString();
+  }
+
   onSubmit(dataForm) {
     this.submitted = true;
     this.stationService.currentSelStation.subscribe(data => dataForm.stationid = data.id);
-    dataForm.date = '2020-02-30';
+    dataForm.date = this.date1String; //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     console.log(dataForm);
     // save here
