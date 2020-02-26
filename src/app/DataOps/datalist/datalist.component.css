@@ -1,0 +1,21 @@
+table {
+  margin-top: 65px;
+  width: 70%;
+  margin-left: 15%;
+}
+/*
+stationlistview{
+  width: 80%;
+  margin-left: 10%;
+
+}
+*/
+
+
+.mat-column-select {
+  overflow: initial;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}

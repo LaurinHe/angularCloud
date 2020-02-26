@@ -66,6 +66,10 @@ export class DatalistComponent implements OnInit {
   }*/
 
   getDataFromServer() {
+    this.stationService.currentSelStation.subscribe(data => this.selectedStation = data);
+    this.stationService.currentSelMinDate.subscribe(data => this.selectedMinDate = data);
+    this.stationService.currentSelMaxDate.subscribe(data => this.selectedMaxDate = data);
+
     this.stationService.getData('?stationidpassed=' +
       this.selectedStation.id +
       '&frompoint=' +
