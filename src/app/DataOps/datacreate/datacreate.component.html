@@ -1,1 +1,426 @@
-<p>datacreate works!</p>
+<h3>Create a Daily Data Entry</h3>
+<app-selector-country></app-selector-country>
+<app-selector-station></app-selector-station>
+
+<form id="dataFormId" [formGroup]="dataForm" (ngSubmit)="onSubmit(dataForm.value)">
+
+<!--<div class="form-group" (ngSubmit)="onSubmit(dataForm.value)">-->
+  <div class="dailyDataInput">
+  <mat-form-field>
+  <label for="temperature">Temperature</label>
+  <input id="temperature" class="form-control"
+         formControlName="temperature" matInput required >
+
+    <div *ngIf="temperature.invalid && (temperature.dirty || temperature.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="temperature.errors.required">
+        Temperature is required.
+      </div>
+      <div *ngIf="temperature.errors.pattern">
+        Temperature must be a a number
+      </div>
+    </div>
+  </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+  <mat-form-field>
+    <label for="tempAttr">Temperature Attribute</label>
+    <input id="tempAttr" class="form-control"
+           formControlName="tempAttr" matInput required >
+
+    <div *ngIf="tempAttr.invalid && (tempAttr.dirty || tempAttr.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="tempAttr.errors.required">
+        Temperature Attribute is required.
+      </div>
+      <div *ngIf="tempAttr.errors.pattern">
+        Temperature Attribute must be an integer
+      </div>
+    </div>
+  </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+  <mat-form-field>
+      <label for="dewpoint">Dewpoint</label>
+      <input id="dewpoint" class="form-control"
+             formControlName="dewpoint" matInput required >
+
+      <div *ngIf="dewpoint.invalid && (dewpoint.dirty || dewpoint.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="dewpoint.errors.required">
+          Dewpoint is required.
+        </div>
+        <div *ngIf="dewpoint.errors.pattern">
+          Dewpoint must be a a number
+        </div>
+      </div>
+  </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+  <mat-form-field>
+    <label for="dewAttr">Dewpoint Attribute</label>
+    <input id="dewAttr" class="form-control"
+           formControlName="dewAttr" matInput required >
+
+    <div *ngIf="dewAttr.invalid && (dewAttr.dirty || dewAttr.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="dewAttr.errors.required">
+        Dewpoint Attribute is required.
+      </div>
+      <div *ngIf="dewAttr.errors.pattern">
+        Dewpoint Attribute must be an integer
+      </div>
+    </div>
+  </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+  <mat-form-field>
+    <label for="seaLevelPressure">Sea Level Pressure</label>
+    <input id="seaLevelPressure" class="form-control"
+           formControlName="seaLevelPressure" matInput required >
+
+    <div *ngIf="seaLevelPressure.invalid && (seaLevelPressure.dirty || seaLevelPressure.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="seaLevelPressure.errors.required">
+        Attribute is required.
+      </div>
+      <div *ngIf="seaLevelPressure.errors.pattern">
+        Attribute a a number
+      </div>
+    </div>
+  </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="slpAttr">Sea Level Pressure Attr</label>
+      <input id="slpAttr" class="form-control"
+             formControlName="slpAttr" matInput required >
+
+      <div *ngIf="slpAttr.invalid && (slpAttr.dirty || slpAttr.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="slpAttr.errors.required">
+          Attribute is required.
+        </div>
+        <div *ngIf="slpAttr.errors.pattern">
+          Attribute must be an integer
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+  <mat-form-field>
+    <label for="stationPressure">station Pressure</label>
+    <input id="stationPressure" class="form-control"
+           formControlName="stationPressure" matInput required >
+
+    <div *ngIf="stationPressure.invalid && (stationPressure.dirty || stationPressure.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="stationPressure.errors.required">
+        Attribute is required.
+      </div>
+      <div *ngIf="stationPressure.errors.pattern">
+        Attribute must be a number
+      </div>
+    </div>
+  </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="stpAttr">stp Attr</label>
+      <input id="stpAttr" class="form-control"
+             formControlName="stpAttr" matInput required >
+      <div *ngIf="stpAttr.invalid && (stpAttr.dirty || stpAttr.touched)"
+           class="alert alert-danger">
+        <div *ngIf="stpAttr.errors.required">
+          Attribute is required.
+        </div>
+        <div *ngIf="stpAttr.errors.pattern">
+          Attribute must be an integer
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="visibility">visibility</label>
+      <input id="visibility" class="form-control"
+             formControlName="visibility" matInput required >
+
+      <div *ngIf="visibility.invalid && (visibility.dirty || visibility.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="visibility.errors.required">
+          Attribute is required.
+        </div>
+        <div *ngIf="visibility.errors.pattern">
+          Attribute must be a number
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="visibAttr">visibility Attr</label>
+      <input id="visibAttr" class="form-control"
+             formControlName="visibAttr" matInput required >
+
+      <div *ngIf="visibAttr.invalid && (visibAttr.dirty || visibAttr.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="visibAttr.errors.required">
+           Attribute is required.
+        </div>
+        <div *ngIf="visibAttr.errors.pattern">
+           Attribute must be an integer
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="windSpeed">Wind Speed</label>
+      <input id="windSpeed" class="form-control"
+             formControlName="windSpeed" matInput required >
+
+      <div *ngIf="windSpeed.invalid && (windSpeed.dirty || windSpeed.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="windSpeed.errors.required">
+           Attribute is required.
+        </div>
+        <div *ngIf="windSpeed.errors.pattern">
+           Attribute must be a number
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="wdspAtr">Windspeed Attribute</label>
+      <input id="wdspAtr" class="form-control"
+             formControlName="slpAttr" matInput required >
+
+      <div *ngIf="wdspAtr.invalid && (wdspAtr.dirty || wdspAtr.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="wdspAtr.errors.required">
+           Attribute is required.
+        </div>
+        <div *ngIf="wdspAtr.errors.pattern">
+           Attribute must be an integer
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="maxWindSpeed">max Windspeed</label>
+      <input id="maxWindSpeed" class="form-control"
+             formControlName="maxWindSpeed" matInput required >
+
+      <div *ngIf="maxWindSpeed.invalid && (maxWindSpeed.dirty || maxWindSpeed.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="maxWindSpeed.errors.required">
+           Attribute is required.
+        </div>
+        <div *ngIf="maxWindSpeed.errors.pattern">
+           Attribute must be a number
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="gust">gust</label>
+      <input id="gust" class="form-control"
+             formControlName="gust" matInput required >
+
+      <div *ngIf="gust.invalid && (gust.dirty || gust.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="gust.errors.required">
+           Attribute is required.
+        </div>
+        <div *ngIf="gust.errors.pattern">
+           Attribute must be an integer
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="maxTemperature">max Temperature</label>
+      <input id="maxTemperature" class="form-control"
+             formControlName="maxTemperature" matInput required >
+
+      <div *ngIf="maxTemperature.invalid && (maxTemperature.dirty || maxTemperature.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="maxTemperature.errors.required">
+           Attribute is required.
+        </div>
+        <div *ngIf="maxTemperature.errors.pattern">
+           Attribute must be a number
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="maxAttr">max Temperature Attribute</label>
+      <input id="maxAttr" class="form-control"
+             formControlName="maxAttr" matInput required >
+
+      <div *ngIf="maxAttr.invalid && (maxAttr.dirty || maxAttr.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="maxAttr.errors.required">
+           Attribute is required.
+        </div>
+
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="minTemperature">min Temperature</label>
+      <input id="minTemperature" class="form-control"
+             formControlName="minTemperature" matInput required >
+
+      <div *ngIf="minTemperature.invalid && (minTemperature.dirty || minTemperature.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="minTemperature.errors.required">
+           Attribute is required.
+        </div>
+        <div *ngIf="minTemperature.errors.pattern">
+           Attribute must be a number
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+  <mat-form-field>
+    <label for="minAttr">min Temperature Attribute</label>
+    <input id="minAttr" class="form-control"
+           formControlName="minAttr" matInput required >
+
+    <div *ngIf="minAttr.invalid && (minAttr.dirty || minAttr.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="minAttr.errors.required">
+         Attribute is required.
+      </div>
+
+    </div>
+  </mat-form-field>
+</div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="precipitation">Precipitation</label>
+      <input id="precipitation" class="form-control"
+             formControlName="precipitation" matInput required >
+
+      <div *ngIf="precipitation.invalid && (precipitation.dirty || precipitation.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="precipitation.errors.required">
+          Attribute is required.
+        </div>
+        <div *ngIf="precipitation.errors.pattern">
+          Attribute must be a number
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="prcpAttr">Precipitation Attribute</label>
+      <input id="prcpAttr" class="form-control"
+             formControlName="prcpAttr" matInput required >
+
+      <div *ngIf="prcpAttr.invalid && (prcpAttr.dirty || prcpAttr.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="prcpAttr.errors.required">
+          Attribute is required.
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="snowDepth">Snow Depth</label>
+      <input id="snowDepth" class="form-control"
+             formControlName="snowDepth" matInput required >
+
+      <div *ngIf="snowDepth.invalid && (snowDepth.dirty || snowDepth.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="snowDepth.errors.required">
+          Attribute is required.
+        </div>
+        <div *ngIf="snowDepth.errors.pattern">
+          Attribute must be a number
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+
+  <div class="dailyDataInput">
+    <mat-form-field>
+      <label for="frshtt">frshtt</label>
+      <input id="frshtt" class="form-control"
+             formControlName="frshtt" matInput required >
+
+      <div *ngIf="frshtt.invalid && (frshtt.dirty || frshtt.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="frshtt.errors.required">
+          Attribute is required.
+        </div>
+        <div *ngIf="frshtt.errors.pattern">
+          Attribute must be an integer
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <button class="button" type="submit">Submit</button>
+</form>

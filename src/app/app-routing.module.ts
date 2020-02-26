@@ -51,6 +51,10 @@ const routes: Routes = [
     component: DatalistComponent
   },
   {
+    path: 'datacreate',
+    component: DatacreateComponent
+  },
+  {
     path: '',
     redirectTo: 'auth/login',
     pathMatch: 'full'
