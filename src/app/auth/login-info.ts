@@ -1,3 +1,7 @@
+/**
+ * This class is for sending the authentication information to the backend
+ * @author Florian Lang
+ */
 export class AuthLoginInfo {
   username: string;
   password: string;

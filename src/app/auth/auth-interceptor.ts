@@ -7,7 +7,7 @@ import { TokenStorageService } from './token-storage.service';
 const TOKEN_HEADER_KEY = 'Authorization';
 
 /**
- *
+ * This Class is intercepting every request and is putting the Bearer Token to the request in the header
  * @author Florian Lang
  */
 @Injectable()
