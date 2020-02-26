@@ -22,11 +22,40 @@ author: Laurin Hecken
       <span>User Management</span>
     </button>
 
+   <button mat-menu-item [mat-menu-trigger-for]="stationMenu">Stations</button>
+
+    <button mat-menu-item routerLink="datalist">
+      <mat-icon></mat-icon>
+      <span>data List</span>
+    </button>
+
+    <button mat-menu-item routerLink="datacreate">
+      <mat-icon></mat-icon>
+      <span>Create Data</span>
+    </button>
+
+    <button mat-menu-item routerLink="climatediag">
+      <mat-icon></mat-icon>
+      <span>Climate Diagram</span>
+    </button>
+
     <button mat-menu-item routerLink="info">
       <mat-icon>info</mat-icon>
       <span>Info about the data</span>
     </button>
 
+  </mat-menu>
+
+  <mat-menu #stationMenu="matMenu">
+    <button mat-menu-item routerLink="stations">
+      <mat-icon>place</mat-icon>
+      <span>Station List</span>
+    </button>
+
+    <button mat-menu-item routerLink="create-station">
+      <mat-icon></mat-icon>
+      <span>Create Stations</span>
+    </button>
   </mat-menu>
 
   <div class="mat-form-field-flex"></div>

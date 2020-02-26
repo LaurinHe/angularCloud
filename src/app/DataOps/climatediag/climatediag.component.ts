@@ -8,6 +8,8 @@ import {DataService} from '../../data.service';
 })
 export class ClimatediagComponent implements OnInit {
 
+  public selectedYear: string;
+
   constructor(private dataService: DataService) { }
 
   years: number[] = [2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010];

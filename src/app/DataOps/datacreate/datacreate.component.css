@@ -5,3 +5,7 @@
 dailyDataInput{
   margin: 5%;
 }
+
+mat-form-field, div {
+  display: flex;
+}

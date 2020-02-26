@@ -1,38 +1,40 @@
 <!--
-author: Florian Lang
+author: Florian Lang & Laurin Hecken
 -->
-<h3>Create Station</h3>
-<div>
-  <form [formGroup]="stationForm" (ngSubmit)="onSubmit(stationForm.value)">
+<mat-card>
+  <h2 mat-card-header>Create Station</h2>
+  <h4 mat-card-header>Fill in the fields</h4>
+  <div>
+    <form [formGroup]="stationForm" (ngSubmit)="onSubmit(stationForm.value)">
 
-<mat-form-field>
-  <input formControlName="id" matInput placeholder="Enter the station id as a number">
+      <mat-form-field>
+        <input formControlName="name" matInput placeholder="Name of the new station">
+      </mat-form-field>
 
-</mat-form-field>
-
-<mat-divider></mat-divider>
-
-<mat-form-field>
-  <input formControlName="name" matInput placeholder="Enter the name of the new station">
-</mat-form-field>
-<mat-form-field>
-  <input formControlName="latitude" matInput placeholder="Enter the latitude (number required)">
-</mat-form-field>
+      <mat-form-field>
+    <input formControlName="id" matInput placeholder="Station id (number)">
+  </mat-form-field>
 
   <mat-form-field>
-    <input formControlName="longitude" matInput placeholder="Enter the longitude (number required)">
+    <input formControlName="latitude" matInput placeholder="Latitude (number)">
   </mat-form-field>
+
   <mat-form-field>
-    <input formControlName="elevation" matInput placeholder="Enter the elevation (number required)">
+    <input formControlName="longitude" matInput placeholder="Longitude (number)">
   </mat-form-field>
-    <app-selector-country></app-selector-country>
 
-    <button class="button" type="submit">Submit</button>
+  <mat-form-field>
+    <input formControlName="elevation" matInput placeholder="Elevation (number)">
+  </mat-form-field>
 
-  </form>
+      <app-selector-country></app-selector-country>
 
-</div>
+      <button mat-raised-button color="accent" class="button" type="submit">Submit</button>
 
+    </form>
+
+  </div>
+</mat-card>
 <!--
 
 <mat-form-field>
