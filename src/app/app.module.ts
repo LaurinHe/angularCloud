@@ -27,7 +27,7 @@ import {
     MatToolbarModule,
     MAT_DATE_LOCALE,
     MatTooltipModule,
-    MatSnackBarModule, MatPaginatorModule,
+    MatSnackBarModule, MatPaginatorModule, MatSortModule,
 } from '@angular/material';
 import { DatepickerComponent } from './selectors/datepicker/datepicker.component';
 import { MatDatepickerModule} from '@angular/material';
@@ -52,6 +52,10 @@ import { UserManagComponent } from './user-manag/user-manag.component';
 
 import {StationListComponent} from './StationOps/station-list/station-list.component';
 import {StationCreateComponent} from './StationOps/station-create/station-create.component';
+import { DatalistComponent } from './DataOps/datalist/datalist.component';
+import { DatacreateComponent } from './DataOps/datacreate/datacreate.component';
+import { ClimatediagComponent } from './DataOps/climatediag/climatediag.component';
+import { BugreportComponent } from './DataOps/bugreport/bugreport.component';
 
 
 @NgModule({
@@ -75,6 +79,10 @@ import {StationCreateComponent} from './StationOps/station-create/station-create
     UserManagComponent,
     StationCreateComponent,
     StationListComponent,
+    DatalistComponent,
+    DatacreateComponent,
+    ClimatediagComponent,
+    BugreportComponent,
   ],
     imports: [
         BrowserModule,
@@ -104,7 +112,8 @@ import {StationCreateComponent} from './StationOps/station-create/station-create
         FormsModule,
         MatTooltipModule,
         MatSnackBarModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatSortModule
     ],
   providers: [httpInterceptorProviders, StationService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent]

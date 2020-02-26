@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IUser} from './Interfaces/UserI';
 
@@ -27,8 +27,18 @@ export class ResetService {
     return this.http.get<IUser[]>(this.baseUrlUM + '/userlist');
   }
 
-  setCurator(): Observable<any> {
-    return this.http.get(this.baseUrlUM + '/setcurator'); // get to set
+  setCurator(username: string): Observable<any> {
+
+    const params = new HttpParams()
+      .set('username', username);
+
+    return this.http.put(this.baseUrlUM + '/setcurator', null, {params} ); // get to set
+  }
+
+  unsetCurator(username: string): Observable<any> {
+    const params = new HttpParams()
+      .set('username', username);
+    return this.http.put(this.baseUrlUM + '/unsetcurator', null, {params}); // get to set
   }
 
   resetpassword(info: ResetPwInfo): Observable<string> {

@@ -1,7 +1,7 @@
 import {Timestamp} from 'rxjs';
 
 export interface IDataAll {
-  stationid: string;
+  stationid: number;
   date: string;
   temperature: number;
   tempAttr: number;
