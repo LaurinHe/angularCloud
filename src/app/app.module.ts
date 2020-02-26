@@ -54,6 +54,8 @@ import {StationListComponent} from './StationOps/station-list/station-list.compo
 import {StationCreateComponent} from './StationOps/station-create/station-create.component';
 import { DatalistComponent } from './DataOps/datalist/datalist.component';
 import { DatacreateComponent } from './DataOps/datacreate/datacreate.component';
+import { ClimatediagComponent } from './DataOps/climatediag/climatediag.component';
+import { BugreportComponent } from './DataOps/bugreport/bugreport.component';
 
 
 @NgModule({
@@ -79,6 +81,8 @@ import { DatacreateComponent } from './DataOps/datacreate/datacreate.component';
     StationListComponent,
     DatalistComponent,
     DatacreateComponent,
+    ClimatediagComponent,
+    BugreportComponent,
   ],
     imports: [
         BrowserModule,

@@ -5,6 +5,8 @@ import {ICountry} from './Interfaces/ICountry';
 import {Observable, BehaviorSubject} from 'rxjs';
 import {IDataAll} from './Interfaces/IDataAll';
 import {AppSettings} from './AppSettings';
+import {IClimateDiagEntry} from './Interfaces/IClimateDiagEntry';
+import {BugReport} from './Interfaces/Classes/BugReport';
 
 /**
  * Service for sending data to the backend
@@ -35,6 +37,16 @@ export class DataService {
   postDataEntry(newentry: IDataAll): Observable<any> {
     return this.http.put(this.baseUrl + 'api/data/putdataentry', newentry);
   }
+
+  getClimateDiagEntry(stationid: number, year: number ): Observable<IClimateDiagEntry[]> {
+    return this.http.get<IClimateDiagEntry[]>(this.baseUrl + 'api/climatediag/getdatayearly');
+  }
+
+  postBugReport(bugreport: BugReport): Observable<any> {
+    return this.http.post(this.baseUrl + '/api/bugreport/reportbug', bugreport);
+  }
+
+
 
 }
 
